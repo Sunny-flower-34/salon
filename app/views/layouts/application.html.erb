@@ -5,12 +5,34 @@
   <title>Salon</title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <%= link_to root_path do %>
+  ホームに戻る
+  <% end %>
+  <i class="fas fa-camera"></i>
+
+  <% if user_signed_in? %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
+  <%= link_to "投稿一覧", posts_path, class: "logout" %>
+  <%= link_to "新規投稿", new_post_path, class: "logout" %>
+  <%= link_to "ユーザー一覧", users_path, class: "list" %>
+  <%= link_to "マイページ", user_path(current_user), class: "logout" %>
+
+  <% else %>
+  <%= link_to "投稿一覧", posts_path, class: "logout" %>
+  <%= link_to "ユーザー一覧", users_path, class: "list" %>
+  <%= link_to "ログイン", new_user_session_path, class: "login" %>
+  <%= link_to "新規登録", new_user_registration_path, class: "login" %>
+  <% end %>
 
   <%= yield %>
 </body>

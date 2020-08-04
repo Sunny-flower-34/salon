@@ -62,3 +62,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
+gem 'pry-rails'
+gem 'devise'
+gem 'coderay', '1.1.2'
+gem "refile", github: 'refile/refile', require: "refile/rails"
+gem "refile-mini_magick", github: 'refile/refile-mini_magick'
+gem 'acts-as-taggable-on', '~> 6.0'
+# gem 'rails-i18n' '~> 5.1'
+# gem 'railties' '>= 6.0.0
+gem "font-awesome-sass"
