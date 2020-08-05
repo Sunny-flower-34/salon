@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_08_05_032961) do
     t.string "image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "title"
   end
 
   create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
