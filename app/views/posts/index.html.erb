@@ -1,0 +1,54 @@
+<section class="section">
+  <h1>Posts#index</h1>
+  <p>Find me in app/views/posts/index.html.erb</p>
+  <h1 class="title">
+    投稿一覧
+  </h1>
+  </div>
+  </div>
+
+  <article class="align-center">
+    <div class="cards">
+      <% @posts.each do |post| %>
+      <div class="card">
+
+        <%= link_to user_path(post.user) do %>
+        <div class="card__Contributor">
+          <div class="card__Contributor__imag">
+            <%= attachment_image_tag post.user, :profile_image, fallback: "no-image.png", class: "userimage" %>
+          </div>
+          <div class="card__Contributor__name">
+            <%= post.user.username %>
+          </div>
+        </div>
+        <% end %>
+
+        <%= link_to post_path(post) do %>
+        <div class="card__image">
+          <%= attachment_image_tag post, :image, class:"imgsize" %>
+        </div>
+
+        <div class="card__title">
+          <%= post.title %>
+        </div>
+        <div class="card__body">
+          <%= simple_format post.body %>
+        </div>
+        <% end %>
+        <div class="card__reactions">
+          <ul class="reaction icon">
+            <li><i class="fa fa-heart"></i></li>
+            <li><i class="fa fa-tag"></i></li>
+            <li><i class="fa fa-envelope"></i></li>
+          </ul>
+        </div>
+
+
+        <div class="card__time">
+          <time><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+        </div>
+      </div>
+      <% end %>
+  </article>
+  </div>
+</section>

@@ -1,0 +1,103 @@
+// .cards {
+//   display: flex;
+//   flex-wrap: wrap;
+//   // background-color: rgb(180, 180, 180);
+//   .card {
+//     border: 1px solid #808080;
+//     flex: auto;
+//     width: 30%;
+//     margin: 10px;
+//     // background-color: rgb(180, 180, 180);
+//     &__image {
+//       background-color: rgb(214, 214, 214);
+//     }
+//     &__time {
+//     }
+//   }
+// }
+
+// .align-center {
+//   margin: 010px auto;
+// }
+
+.icon {
+  font-size: 30px;
+}
+
+.cards {
+  width: 80%;
+  margin: 0 auto;
+
+  .card {
+    margin-top: 20px;
+    background: rgb(197, 196, 196);
+
+    &__Contributor {
+      display: flex;
+      //     justify-content: space-around;
+      align-items: center;
+      border-bottom: 1px solid rgb(211, 211, 211);
+
+      &__imag {
+        width: 50%;
+
+        .userimage {
+          margin: 10px;
+          border: 1px groove #6d6d6d;
+          border-radius: 50%;
+          width: 100px;
+          height: 80%;
+        }
+      }
+
+      &__name {
+        //       border-bottom: 1px solid rgb(143, 141, 141);
+        font-family: "Courier New", Courier, monospace;
+        color: rgb(0, 0, 0);
+        font-size: 35px;
+      }
+    }
+
+    &__image {
+      margin: 10px auto;
+      height: 800px;
+      object-fit: contain;
+    }
+
+    &__body {
+      font-size: 30px;
+      width: 80%;
+      margin: 15px auto;
+    }
+
+    &__reactions {
+      .reaction {
+        display: flex;
+        justify-content: flex-end;
+        margin: 10px 30px;
+      }
+    }
+
+    &__time {
+      color: #3a3939;
+      //     font-family: "Courier New", Courier, monospace;
+    }
+  }
+}
+
+// .post {
+// display: flex;
+// }
+
+// 新規投稿
+
+.container {
+  display: flex;
+  justify-content: center;
+
+  // display: inline-block;
+  // margin: 0 auto;
+  // text-align: center;
+  .Post-form {}
+
+}
