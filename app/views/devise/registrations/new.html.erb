@@ -1,44 +1,53 @@
-<h2>新規登録</h2>
+<section class="section">
+  <h2 class="title">新規登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= render "devise/shared/error_messages", resource: resource %>
+  <div class="form row">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="field">
-  <%= f.label :username %><br />
-  <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-</div>
+    <div class="form__field col x-50">
+      <%= f.label :UserName, class: "label" %><br />
+      <p class="form__input input-text js-input">
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form__input__field input-text js-input"  %>
+      </p>
+    </div>
 
-<div class="field">
-  <%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-</div>
+    <div class="form__field col x-50">
+      <%= f.label :email, class: "label" %><br />
+      <p class="form__input input-text js-input">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form__input__field input-text js-input"  %>
+      </p>
+    </div>
 
-<div class="field">
-  <%= f.label :tag_list %><br />
-  <%= f.text_field :tag_list, value: f.object.tag_list.to_s %>
-</div>
-
-
-<div class="field">
-  <%= f.label :password %>
-  <% if @minimum_password_length %>
-  <em>(<%= @minimum_password_length %> characters minimum)</em>
-  <% end %><br />
-  <%= f.password_field :password, autocomplete: "new-password" %>
-</div>
-
-<div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-</div>
-
-<div class="actions">
-  <%= f.submit "登録" %>
-</div>
+    <div class="form__field col x-50">
+      <%= f.label :tag_list, class: "label" %><br />
+      <p class="form__input input-text js-input">
+        <%= f.text_field :tag_list, value: f.object.tag_list.to_s, class: "form__input__field input-text js-input"  %>
+      </p>
+    </div>
 
 
-<% end %>
+    <div class="form__field col x-50">
+      <%= f.label :password, class: "label" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <p class="form__input input-text js-input">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form__input__field input-text js-input"  %>
+      </p>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="form__field col x-50">
+      <%= f.label :password_confirmation, class: "label" %><br />
+      <p class="form__input input-text js-input">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form__input__field input-text js-input"  %>
+      </p>
+    </div>
 
-<%= link_to "パス忘れた", new_user_password_path, class: "login" %>
+    <div class="actions form__field col x-100 align-center">
+      <%= f.submit "登録", class: "submit-btn" %>
+      <% end %>
+      <%= link_to "パス忘れた", new_user_password_path, class: "login", class: "submit-btn" %>
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>

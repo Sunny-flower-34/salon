@@ -6,34 +6,135 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha256-UzFD2WYH2U1dQpKDjjZK72VtPeWP50NoJjd26rnAdUI=" crossorigin="anonymous" />
-
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= link_to root_path do %>
-  ホームに戻る
-  <% end %>
-  <i class="fas fa-camera"></i>
 
-  <% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %>
-  <%= link_to "投稿一覧", posts_path, class: "logout" %>
-  <%= link_to "新規投稿", new_post_path, class: "logout" %>
-  <%= link_to "ユーザー一覧", users_path, class: "list" %>
-  <%= link_to "マイページ", user_path(current_user), class: "logout" %>
+  <div class="body">
 
-  <% else %>
-  <%= link_to "投稿一覧", posts_path, class: "logout" %>
-  <%= link_to "ユーザー一覧", users_path, class: "list" %>
-  <%= link_to "ログイン", new_user_session_path, class: "login" %>
-  <%= link_to "新規登録", new_user_registration_path, class: "login" %>
-  <% end %>
 
+    <aside class="asid">
+      <div class="links">LINK</div>
+      <nav>
+        <ul class="icons">
+          <li><i class="fas fa-camera"></i></li>
+          <li><i class="fa fa-heart"></i></li>
+          <li><i class="fa fa-heart"></i></li>
+          <li><i class="fa fa-heart"></i></li>
+          <li><i class="fa fa-tag"></i></li>
+          <li><i class="fa fa-envelope"></i></li>
+        </ul>
+      </nav>
+      <div>
+      </div>
+    </aside>
+
+
+
+
+
+    <header class="header">
+      <div>
+        <%= link_to root_path, class: "title" do %>
+        Encounter Salon
+        <% end %>
+        <i class="fas fa-camera"></i>
+        <i class="fa fa-heart-o"></i>
+        <i class="fa fa-heart"></i>
+        <i class="fa fa-heart-o"></i>
+        <i class="fa fa-tag"></i>
+        <i class="fa fa-envelope-o"></i>
+        <i class="fa fa-envelope"></i>
+      </div>
+      <input type="text" class="input" placeholder="検索">
+      <div>
+        <% if user_signed_in? %>
+        <ul class="menu">
+          <li class="menu__list">
+            <%= link_to destroy_user_session_path, method: :delete, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">LOG OUT</p>
+            <p>ログアウト</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to new_post_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">NEW POST</p>
+            <p>新規投稿</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to posts_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">POST LIST</p>
+            <p>投稿一覧</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to users_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">USERS</p>
+            <p>ユーザー一覧</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to tags_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">TAGS</p>
+            <p>タグ一覧</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to  user_path(current_user), class: "menu__list__ja" do%>
+            <p class="menu__list__eng">MY PAGE</p>
+            <p>マイページ</p>
+            <% end %>
+          </li>
+        </ul>
+        <% else %>
+        <ul class="menu">
+          <li class="menu__list">
+            <%= link_to posts_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">POST LIST</p>
+            <p>投稿一覧</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to users_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">LOG OUT</p>
+            <p>ユーザー一覧</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to new_user_session_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">LOG OUT</p>
+            <p>ログイン</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to new_user_password_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">LOG OUT</p>
+            <p>pass忘れた</p>
+            <% end %>
+          </li>
+          <li class="menu__list">
+            <%= link_to new_user_registration_path, class: "menu__list__ja" do%>
+            <p class="menu__list__eng">LOG OUT</p>
+            <p>新規登録</p>
+            <% end %>
+          </li>
+        </ul>
+        <% end %>
+
+      </div>
+
+    </header>
+
+
+  </div>
+  <div class="Notification">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
   <%= yield %>
 </body>
 

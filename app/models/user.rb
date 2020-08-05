@@ -7,5 +7,8 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
 
   validates :username, presence: true
+  acts_as_taggable_on :tags # user.tag_list が追加される
+  acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
+  
 
 end

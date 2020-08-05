@@ -1,55 +1,44 @@
-class PostsController < ApplicationController
+class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
-  def new
-    @post = Post.new
-
-  end
-
-  def create
-    @post = Post.new(post_params)
-    @post.user_id = current_user.id
-    if @post.save
-      redirect_to post_path(@post), notice: '投稿に成功しました'
+  def index
+    if params[:tag_name]
+      @users = User.tagged_with("#{params[:tag_name]}")
     else
-      render :new
+      @users = User.all
     end
-  end
-
-  def index 
-      @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
-    if @post.user != current_user
-      redirect_to posts_path, alert: "不正なアクセスです"
+    @user = User.find(params[:id])
+    if @user != current_user
+
+      redirect_to users_path, alert: "不正なアクセスです"
     end
   end
-
+  
   def update
-    @post = Post.find(params[:id])
-    if @post.update(post_params)
-      redirect_to post_path(@post), notice: '更新'
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: '更新できた'
     else
       render :edit
     end
-
   end
-
+  
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path(@post)
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_path(@user)
   end
-
-
-    private
-  def post_params
-    params.require(:post).permit(:body, :image, :tag_list)
+  
+  private
+  
+  def user_params
+    params.require(:user).permit(:username, :email, :profile, :profile_image, :tag_list)
   end
 end
