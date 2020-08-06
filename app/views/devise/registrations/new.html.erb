@@ -47,13 +47,12 @@
         </p>
       </div>
 
-      <div class="actions form__field righat">
+      <div class="actions form__field">
         <div>
           <%= f.submit "Sign Up", class: "submit-btn" %>
         </div>
         <div>
-
-          <%= link_to "パス忘れた", new_user_password_path, class: "login", class: "submit-btn" %>
+          <%= link_to "パスワードを忘れた方はこちら", new_user_password_path, class: "login" %>
         </div>
         <p class="have-account">Have an account?
           <%= render "devise/shared/links" %>
