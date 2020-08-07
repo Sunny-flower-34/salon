@@ -1,12 +1,5 @@
 <section class="section">
-  <h1>Posts#index</h1>
-  <p>Find me in app/views/posts/index.html.erb</p>
-  <h1 class="title">
-    投稿一覧
-  </h1>
-  </div>
-  </div>
-
+  <h1 class="title">投稿一覧</h1>
   <article class="align-center">
     <div class="cards">
       <% @posts.each do |post| %>
@@ -25,7 +18,7 @@
 
         <%= link_to post_path(post) do %>
         <div class="card__image">
-          <%= attachment_image_tag post, :image, class:"imgsize" %>
+          <%= attachment_image_tag post, :image, class:"post-imgsize" %>
         </div>
 
         <div class="card__title">
@@ -42,10 +35,8 @@
             <li><i class="fa fa-envelope"></i></li>
           </ul>
         </div>
-
-
         <div class="card__time">
-          <time><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+          <time><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
         </div>
       </div>
       <% end %>

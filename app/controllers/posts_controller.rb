@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     def show
       @post = Post.find(params[:id])
       @comments = @post.comments  #投稿詳細に関連付けてあるコメントを全取得
-    @comment = current_user.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
+      @comment = current_user.comments.new  #投稿詳細画面でコメントの投稿を行うので、formのパラメータ用にCommentオブジェクトを取得
 
   end
 
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to post_path(@post), notice: '更新'
+      redirect_to post_path(@post), notice: '更新しました'
     else
       render :edit
     end

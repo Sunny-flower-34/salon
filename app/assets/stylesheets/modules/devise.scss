@@ -3,134 +3,189 @@
 // @import url(https://fonts.googleapis.com/css?family=Lusitana:400, 700);
 
 // Helpers
-@mixin clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-.align-center {
-  text-align: center;
-  padding-left: 130px;
-}
-
-// Basics
-html {
-  height: 100%;
-}
-body {
-  margin-top: 100px;
-  height: 100%;
-  position: relative;
-}
-// Grid
-.row {
-  @include clearfix;
-  // margin: -20px 0;
-  .col {
-    padding: 0 20px;
-    float: left;
-    box-sizing: border-box;
-    &.x-50 {
-      width: 100%;
-    }
-    &.x-100 {
-      width: 100%;
-    }
-  }
-}
-
-// .content-wrapper {
-//    min-height: 100%;
-//    position: relative;
+// @mixin clearfix {
+//   &:after {
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
 // }
 
-.section {
-  max-width: 1600px;
-  margin: 40px auto;
-  // position: relative;
-  // top: 50%;
-  // transform: translateY(-50%);
+// .align-center {
+//   text-align: center;
+//   padding-left: 130px;
+// }
 
-  .title {
-    font-family: "Open Sans", sans-serif;
-    letter-spacing: 0.3em;
-    margin-top: 200px;
+
+
+// // Basics
+// html {
+//   height: 100%;
+// }
+
+// body {
+//   margin-top: 100px;
+//   height: 100%;
+//   position: relative;
+// }
+
+// // Grid
+// .row {
+//   @include clearfix;
+// }
+
+//   // margin: -20px 0;
+// .col {
+//   padding: 0 20px;
+//   float: left;
+//   box-sizing: border-box;
+
+//   &.x-50 {
+//     width: 100%;
+//   }
+
+//   &.x-100 {
+//     width: 100%;
+//   }
+// }
+
+// }
+
+// // .content-wrapper {
+// //    min-height: 100%;
+// //    position: relative;
+// // }
+
+.section1 {
+  max-width: 1000px;
+  margin: 200px auto;
+
+  //   // position: relative;
+  //   // top: 50%;
+  //   // transform: translateY(-50%);
+  .userform {
+    border: 1px solid;
+    width: 60%;
+    margin: 32px auto;
+    padding: 60px;
     text-align: center;
-    font-family: Raleway, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 46px;
-    line-height: 48px;
-    padding-bottom: 48px;
+
+    .title-signup {
+      color: #888;
+      font-family: "Open Sans", sans-serif;
+      letter-spacing: 0.2em;
+      // margin-top: 200px;
+      // text-align: center;
+      // font-family: Raleway, sans-serif;
+      //     text-transform: uppercase;
+      //     letter-spacing: 3px;
+      font-size: 40px;
+      //     line-height: 48px;
+      //     padding-bottom: 48px;
+      //   }
+    }
   }
-}
 
-.contact-form {
-  .form-field {
-    position: relative;
-    margin: 32px 0;
+  .form {
+    //     display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 
-    .input-text {
-      display: block;
-      width: 100%;
-      height: 36px;
-      border-width: 0 0 2px 0;
-      border-color: #000;
-      font-family: Lusitana, serif;
-      font-size: 18px;
-      line-height: 26px;
-      font-weight: 400;
+    &__field {
+      // text-align: center;
+      // position: relative;
+      margin: 45px 15px 25px;
 
-      &:focus {
+      .input-text {
+        // display: block;
+        width: 100%;
+        // height: 36px;
+        border-width: 0 0 2px 0;
+        border-color: #888;
+        // font-family: Lusitana, serif;
+        // font-size: 18px;
+        // line-height: 26px;
+        // font-weight: 400;
+
+        // &:focus {
         outline: none;
+        // }
+
+        // &:focus,
+        // .not-empty {
+        //   .label {
+        //     transform: translateY(-24px);
+        //   }
+        // }
+
+        // }
       }
 
-      // &:focus,
-      // .not-empty {
-      //   .label {
-      //   transform: translateY(-24px);
-      // }
-      // }
-    }
-  }
-  .label {
-    // position: absolute;
-    // left: 20px;
-    // bottom: 11px;
-    font-family: Lusitana, serif;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #888;
-    cursor: text;
-    transition: transform 0.2s ease-in-out;
-    // &:focus {
-    //   transform: translateY(-50px);
-    // }
-  }
+      .label {
+        //     // position: absolute;
+        //     // left: 20px;
+        // // text-align: center;
+        // bottom: 11px;
+        font-family: Lusitana, serif;
+        font-size: 25px;
+        // line-height: 26px;
+        //     font-weight: 400;
+        color: #888;
+        // margin-bottom: 5px;
+        // cursor: text;
+        // transition: transform 0.2s ease-in-out;
 
-  .submit-btn {
-    display: inline-block;
-    background-color: rgb(54, 54, 54);
-    color: #fff;
-    font-family: Raleway, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 20px 40px;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 40px;
-    transition: transform 0.5s ease-in-out;
+        // &:focus {
+        //   transform: translateY(-50px);
+        // }
+      }
 
-    &:hover {
-      background-color: #fff;
-      color: rgb(56, 56, 56);
-      box-shadow: 0 4px 24px rgb(54, 54, 54);
+      .text-area {
+        height: 100px;
+        margin-bottom: 10px;
+      }
+
+      .submit-btn {
+        display: inline-block;
+        background-color: rgb(86, 86, 86);
+        color: #fff;
+        font-family: Raleway, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 10px 30px;
+        border: none;
+        cursor: pointer;
+        margin: 40px 0;
+        width: 100%;
+        //     transition: transform 0.5s ease-in-out;
+
+        &:hover {
+          background-color: #fff;
+          color: rgb(56, 56, 56);
+          box-shadow: 0 4px 24px rgb(54, 54, 54);
+        }
+      }
     }
   }
 }
+
+.righat {
+
+  // padding-left: 130px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-end;
+  .have-account {}
+
+  .have-account {}
+}
+
+.far {
+  cursor: pointer;
+
+}
+
+// ユーザー一覧
+// ユーザー詳細、マイページ
