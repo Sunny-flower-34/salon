@@ -33,7 +33,7 @@
       <div class="form__field">
         <%= f.label :password, class: "label" %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(<%= @minimum_password_length %> 文字以上）</em>
         <% end %><br />
         <p class="form__input input-text js-input">
           <%= f.password_field :password, autocomplete: "new-password", class: "form__input__field input-text js-input"  %>
