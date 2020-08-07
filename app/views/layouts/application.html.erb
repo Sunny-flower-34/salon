@@ -32,10 +32,6 @@
       </div>
     </aside>
 
-
-
-
-
     <header class="header">
       <div>
         <%= link_to root_path, class: "title" do %>
@@ -104,13 +100,13 @@
           </li>
           <li class="menu__list">
             <%= link_to users_path, class: "menu__list__ja" do%>
-            <p class="menu__list__eng">LOG OUT</p>
+            <p class="menu__list__eng">USERS</p>
             <p>ユーザー一覧</p>
             <% end %>
           </li>
           <li class="menu__list">
             <%= link_to new_user_session_path, class: "menu__list__ja" do%>
-            <p class="menu__list__eng">LOG OUT</p>
+            <p class="menu__list__eng">LOG IN</p>
             <p>ログイン</p>
             <% end %>
           </li>
@@ -136,8 +132,12 @@
 
   </div>
   <div class="Notification">
+    <% if flash[:notice].present? %>
     <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if flash[:alert].present? %>
     <p class="alert"><%= alert %></p>
+    <% end %>
   </div>
   <%= yield %>
 </body>
