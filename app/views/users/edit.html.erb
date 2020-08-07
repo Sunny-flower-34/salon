@@ -1,36 +1,70 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
-<% if @user.errors.any? %>
-  <div>
-    <h2><%= pluralize(@user.errors.count, "error") %> があります</h2>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<section class="section1">
+  <div class="userform">
 
-<%= form_with model: @user, local: true do |f| %>
+    <h3 class="title-signup">編集</h3>
 
-  <%= f.label :username, "ユーザー名前", class: "lable" %>
-  <%= f.text_field :username %>
+    <% if @user.errors.any? %>
+    <div>
+      <h2><%= pluralize(@user.errors.count, "error") %> があります</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <% end %>
 
-  <%= f.label :email, "メール", class: "lable" %>
-  <%= f.text_field :email %>
+    <%= form_with model: @user, local: true do |f| %>
+    <div class="post-form__field">
+      <div class="post-form__field__photo">Photo
+        <%= f.label :profile_image, class: "lable" do %><br>
+        <span><i class="far fa-image fa-3x "></i></span>
+        <%= f.attachment_field :profile_image, class: "display-none" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="form__field">
+      <%= f.label :UserName, class: "label" %><br />
+      <p class="form__input input-text js-input">
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form__input__field input-text js-input"  %>
+      </p>
+    </div>
 
-  <%= f.label :profile, "プロフ", class: "lable" %>
-  <%= f.text_area :profile %>
+    <div class="form__field">
+      <%= f.label :email, class: "label" %><br />
+      <p class="form__input input-text js-input">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form__input__field input-text js-input"  %>
+      </p>
+    </div>
+    <div class="form__field">
+      <%= f.label :profile, class: "lable" %>
+      <p class="form__input input-text js-input">
+        <%= f.text_area :profile, class: "form__input__field input-text js-input text-area" %>
+      </p>
+    </div>
 
-  <%= f.label :profile_image, "画像", class: "lable" %>
-  <%= f.attachment_field :profile_image %>
-  
-  <%= f.submit "更新する", class: "button submit" %>
 
-  <%= f.label :tag_list, 'タグをカンマ区切りで入力' %>
-  <%= f.text_field :tag_list, value: @user.tag_list.join(' ') %>
-          
-  <% @user.tag_list.each do |tag| %>
+
+
+    <div class="form__field">
+      <%= f.label :tag_list, 'tag', class: "label" %><br />
+      <p class="form__input input-text js-input">
+        <%= f.text_field :tag_list, value: f.object.tag_list.to_s, class: "form__input__field input-text js-input" , placeholder: 'タグをカンマ区切りで入力' %>
+      </p>
+    </div>
+    <%
+=begin%>
+    <%= f.label :tag_list, 'タグをカンマ区切りで入力' %>
+    <%= f.text_field :tag_list, value: @user.tag_list.join(' ') %>
+    <%
+=end%>
+
+    <% @user.tag_list.each do |tag| %>
     <span style="background-color: #e9e9e9; border-radius: 5px;"><%= tag %></span>
-  <% end %>
-<% end %>
+    <% end %>
+    <div>
+      <%= f.submit "更新する", class: "button submit" %>
+    </div>
+    <% end %>
+  </div>
+</section>
