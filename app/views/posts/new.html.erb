@@ -17,8 +17,12 @@
         <%= form_with model: @post, local: true do |f| %>
 
         <div class="post-form__field">
-          <%= f.label :image, "写真", class: "label" %>
-          <%= f.attachment_field :image, class: "input-default" %>
+          <div class="post-form__field__photo">Photo
+            <%= f.label :image, class: "label" do %>
+            <span><i class="far fa-image"></i></span>
+            <%= f.attachment_field :image, class: "display-none" %>
+            <% end %>
+          </div>
         </div>
         <div class="post-form__field">
           <%= f.label :title, "タイトル", class: "label" %>
@@ -33,7 +37,7 @@
 
 
         <div class="post-form__field">
-          <%= f.submit '投稿！', class: "button" %>
+          <%= f.submit '投稿！', class: "button1" %>
         </div>
         <% end %>
 

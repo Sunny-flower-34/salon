@@ -5,59 +5,56 @@
       <%= attachment_image_tag @post, :image, class: "post-imgsize" %>
     </div>
     <div class="post__content">
+      <div class="post-user">
+
+        <span class="card__Contributor__imag">
+          <%= attachment_image_tag @post.user, :profile_image, fallback: "no-image.png", class: "userimage" %>
+        </span>
+        <div>
+          <%= link_to user_path(@post.user), class: "panel-block" do %>
+          <%= @post.user.username %>
+
+        </div>
+
+        <% if @post.user.id == current_user.id %>
+        <%= link_to edit_post_path(@post), class: "button is-success" do %>
+        <i class="fa fa-cog">編集</i>
+        <% end %>
+        <% end %>
+        <% end %>
+      </div>
       <div class="post-t">
         <%= @post.title %>
       </div>
       <div class="post-b">
         <%= simple_format @post.body %>
       </div>
-      <% if @post.user.id == current_user.id %>
-      <%= link_to edit_post_path(@post), class: "button is-success" do %>
-      <i class="fa fa-cog">編集</i>
-      <% end %>
-      <% end %>
-
-      By <%= @post.user.username %>
-
-      <%
-=begin%>
-      <div class="panel-block">
-        <p class="control"><%= @post.user.profile %></p>
+      <div class="post-time">
+        <time><%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
       </div>
-      <%
-=end%>
-      <%= link_to user_path(@post.user), class: "panel-block" do %>
-      <span class="icon">
-        <i class="fas fa-user" aria-hidden="true"></i>
-      </span>
 
-      <%= @post.user.username %> のページへ
-      <% end %>
-
-
-
-      <div class="card__Contributor__imag">
-        <%= attachment_image_tag @post.user, :profile_image, fallback: "no-image.png", class: "userimage" %>
-      </div>
-      <div>
-        <div>
-          <%= form_with(model:[@post, @comment], method: :post) do |f| %>
-          <%= f.text_area :comment_content %>
-          <%= f.hidden_field :post_id, value: @post.id%>
-          <%= f.submit 'コメントする' %>
-          <% end %>
-        </div>
-        <div>
+      <div class="comments">
+        <div class="comment">
           <% @comments.each do |comment| %>
-          <%= comment.comment_content %> #コメントの内容が表示される
+          <div>
+            <%= comment.comment_content %>
+          </div>
           <% end %>
         </div>
-        <%= link_to 'ホーム', root_path %>
+        <div class="comment-form">
+          <%= form_with(model:[@post, @comment], method: :post) do |f| %>
+          <div class="comment-form__input">
+            <%= f.text_field :comment_content, placeholder: 'コメントを追加…', class: "comment-form__input__field" %>
+            <%= f.hidden_field :post_id, value: @post.id%>
+          </div>
+          <div class="comment-form__buttn">
+            <%= f.submit '送信する', class: "comment-submit-buttn" %>
+          </div>
+          <% end %>
+        </div>
       </div>
 
     </div>
   </div>
-  </div>
-  </article>
-  </div>
+
 </section>
