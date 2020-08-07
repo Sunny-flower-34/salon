@@ -17,7 +17,7 @@
     .card {
       // width: 30%;
       margin-top: 20px;
-      background: rgb(197, 196, 196);
+      background: #ccc;
       border: 1px solid #808080;
       flex: auto;
       margin: 30px;
@@ -130,9 +130,6 @@
         // border: 1px solid #ccc;
         height: 100px;
 
-        .display-none {
-          display: none;
-        }
 
         .fa-image {
           position: absolute;
@@ -155,6 +152,10 @@
       }
     }
   }
+}
+
+.display-none {
+  display: none;
 }
 
 // 投稿詳細
