@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :rooms, only: %i[index show]
   devise_for :users
   # get 'home/top'
   # root to: "home#top"
@@ -8,4 +9,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]  #commentsコントローラへのルーティング
   end
   resources :tags, only: %i[index show]
+  
 end

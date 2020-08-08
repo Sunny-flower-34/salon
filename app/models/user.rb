@@ -6,7 +6,7 @@ class User < ApplicationRecord
   attachment :profile_image
   has_many :posts, dependent: :destroy
   has_many :comments
-
+  has_many :messages
   validates :username, presence: true
   
   acts_as_taggable_on :tags # user.tag_list が追加される
