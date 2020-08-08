@@ -7,8 +7,10 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments
   has_many :messages
-  validates :username, presence: true
+  has_many :room_user
+  has_many :rooms, through: :room_users
   
+  validates :username, presence: true
   acts_as_taggable_on :tags # user.tag_list が追加される
   acts_as_taggable            # acts_as_taggable_on :tags のエイリアス
 
