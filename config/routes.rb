@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :rooms, only: %i[index show]
+  resources :rooms, only: %i[index show new create]
   devise_for :users
   # get 'home/top'
   # root to: "home#top"

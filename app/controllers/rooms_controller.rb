@@ -1,5 +1,20 @@
 class RoomsController < ApplicationController
- 
+   def new
+    @room = Room.new
+    # @room.users << current_user
+  end
+  def create
+    @room = Room.new(params[:room])
+    if @room.save
+      flash[:success] = "Object successfully created"
+      redirect_to @room
+    else
+      flash[:error] = "Something went wrong"
+      render 'new'
+    end
+  end
+  
+  
   def index
     @rooms = Room.all.order(:id)
   end

@@ -3,6 +3,7 @@
     <ul>
       <% @rooms.each do |room| %>
       <li>index<%= link_to "ROOM#{room.id}", room_path(room) %></li>
+      <li>index<%= link_to "sinnki", new_room_path(room) %></li>
       <% end %>
     </ul>
   </div>
