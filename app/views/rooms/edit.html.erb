@@ -1,14 +1,14 @@
 <section class="section">
-  <h1>NewRoom</h1>
+  <h1>newroom</h1>
   <%= form_with model: @room, local: true do |f| %>
   <div class="newroomform">
     <div class="newroomform">
       <div class="newroomform__filed">
         <div class="newroomform__filed__left">
-          <%=  f.label :name, "Room Name", class: 'newroomform__filed__label' %>
+          <%=  f.label :name, "グループ名", class: 'newroomform__filed__label' %>
         </div>
         <div class="newroomform__filed__raight">
-          <%= f.text_field :name, class: 'newroomform__filed__input input-default', placeholder: 'ルーム名を入力してください',required:true %>
+          <%= f.text_field :name, class: 'newroomform__filed__input', placeholder: 'グループ名を入力してください' %>
         </div>
       </div>
       <div class="newroomform__filed">
@@ -16,7 +16,7 @@
           <%=  f.label :name, "チャットメンバーを追加", class: 'newroomform__filed__label' %>
         </div>
         <div class="newroomform__filed__raight">
-          <%= f.text_field :name, class: 'newroomform__filed__input input-default', placeholder: '追加したいユーザー名を入力してください' %>
+          <%= f.text_field :name, class: 'newroomform__filed__input', placeholder: '追加したいユーザー名を入力してください' %>
         </div>
         <div class="newroomform__filed">
           <div class="newroomform__filed__left">
@@ -37,7 +37,7 @@
           <% end %>
           <% end %>
         </div>
-        <%= f.submit "新規作成",class: 'SettingGroupForm__button button1' %>
+        <%= f.submit "sinnkiroom",class: 'SettingGroupForm__button' %>
       </div>
     </div>
   </div>

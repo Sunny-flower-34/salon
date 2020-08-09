@@ -1,43 +1,38 @@
 <section class="section">
-  <div class="side-ber">
-    <div class="side-ber__user-name">
-      <div class="top-item">
-        <div class="top-item__name ">
-          <%= current_user.username %>
-          <div class="top-item__icons">
-            <%= link_to new_room_path , class: "Contents" do %>
-            <p>新規room作成icon</p>
-            <% end %>
-            <%= link_to edit_user_path(current_user) do %>
-            <p>room編集icon</p>
-            <% end %>
-          </div>
-        </div>
-      </div>
+  <div class="talkroom-list">
+    <div class="talkroom-list__title">
+      <%= current_user.username %>’s Talk Room
     </div>
-  </div>
-  <div class="side-ber__room-list">
+    <div class="talkroom-list__newroom">
+      <%= link_to new_room_path , class: "Contents" do %>
+      <p>New Room <i class="fas fa-comment-medical"></i></p>
+      <% end %>
+    </div>
     <% @rooms.each do |room| %>
-    <div class="side-ber__room-list__G">
-      <%= link_to room_messages_path(room) do %>
-      <div class="side-ber__room-list__G__name">
-        ↓ルームネーム
-        <p><%= room.name %></p>
-        <li><%= link_to "ROOM#{room.name}", room_path(room) %></li>
-        <div class="side-ber__room-list__G__message">
-          ここに最後のメッセージ↓
-          <p><%= room %></p>
+
+    <div class="room-list">
+      <%= link_to  room_path(room) do %>
+      <div class="room-list__link1">
+        <div class="room-list__link1__name">
+          <%= "ROOM #{room.name}" %>
+        </div>
+        <div class="room-list__link1__list-message">
+          <%= room.last_message %>
         </div>
       </div>
       <% end %>
+      <div class="room-list__link2">
+        <span class="room-list__link__edit">
+          <%= link_to edit_room_path(room) do %>
+          <i class="fas fa-cog"></i>
+          <% end %></span>
+        <span class="room-list__link__delete">
+          <%= link_to room_path(room), method: :delete, data: {confirm: "消していいの？"} do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end %></span>
+      </div>
     </div>
+
     <% end %>
-  </div>
-  <div>
-    <ul>
-      <% @rooms.each do |room| %>
-      <li>新規ルーム作成<%= link_to "sinnki", new_room_path(room) %></li>
-      <% end %>
-    </ul>
   </div>
 </section>
