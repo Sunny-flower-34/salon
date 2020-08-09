@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # root to: "home#top"
   root to: "home#index"
   resources :users
-  resources :rooms, only: %i[index show new create] do
+  resources :rooms do
     resources :messages, only: [:index, :create]
     namespace :api do
       resources :messages, only: :index, defaults: { format: 'json' }
