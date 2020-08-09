@@ -1,0 +1,45 @@
+<section class="section">
+  <h1>NewRoom</h1>
+  <%= form_with model: @room, local: true do |f| %>
+  <div class="newroomform">
+    <div class="newroomform">
+      <div class="newroomform__filed">
+        <div class="newroomform__filed__left">
+          <%=  f.label :name, "Room Name", class: 'newroomform__filed__label' %>
+        </div>
+        <div class="newroomform__filed__raight">
+          <%= f.text_field :name, class: 'newroomform__filed__input input-default', placeholder: 'ルーム名を入力してください',required:true %>
+        </div>
+      </div>
+      <div class="newroomform__filed">
+        <div class="newroomform__filed__left">
+          <%=  f.label :name, "チャットメンバーを追加", class: 'newroomform__filed__label' %>
+        </div>
+        <div class="newroomform__filed__raight">
+          <%= f.text_field :name, class: 'newroomform__filed__input input-default', placeholder: '追加したいユーザー名を入力してください' %>
+        </div>
+        <div class="newroomform__filed">
+          <div class="newroomform__filed__left">
+            <%=  f.label :name, "チャットメンバー", class: 'newroomform__filed__label' %>
+            <p>current_user.username↓</p>
+          </div>
+          <div class="newroomform__filed__raight">
+          </div>
+          <div class="ChatMembers">
+            <p class="ChatMember__name"><%= current_user.username %></p>
+            <input name="group[user_ids][]" , type="hidden" , value=current_user.id>
+          </div>
+          <% @room.users.each do |user| %>
+          <% if current_user.username != user.username %>
+          <%= user.username %>
+          <div class="ChatMember__remove.ChatMember__button">?????</div>
+          <input name="group[user_ids][]" , type="hidden" , value=current_user.id>
+          <% end %>
+          <% end %>
+        </div>
+        <%= f.submit "新規作成",class: 'SettingGroupForm__button button1' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</section>

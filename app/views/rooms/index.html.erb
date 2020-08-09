@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="talkroom-list">
+    <div class="talkroom-list__title">
+      <%= current_user.username %>’s Talk Room
+    </div>
+    <div class="talkroom-list__newroom">
+      <%= link_to new_room_path , class: "Contents" do %>
+      <p>New Room <i class="fas fa-comment-medical"></i></p>
+      <% end %>
+    </div>
+    <% @rooms.each do |room| %>
+
+    <div class="room-list">
+      <%= link_to  room_path(room) do %>
+      <div class="room-list__link1">
+        <div class="room-list__link1__name">
+          <%= "ROOM #{room.name}" %>
+        </div>
+        <div class="room-list__link1__list-message">
+          <%= room.last_message %>
+        </div>
+      </div>
+      <% end %>
+      <div class="room-list__link2">
+        <span class="room-list__link__edit">
+          <%= link_to edit_room_path(room) do %>
+          <i class="fas fa-cog"></i>
+          <% end %></span>
+        <span class="room-list__link__delete">
+          <%= link_to room_path(room), method: :delete, data: {confirm: "消していいの？"} do %>
+          <i class="fas fa-trash-alt"></i>
+          <% end %></span>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+</section>

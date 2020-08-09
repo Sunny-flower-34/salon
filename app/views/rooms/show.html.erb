@@ -1,0 +1,21 @@
+<section class="section3">
+  <h1 class="room-title">Talk room</h1>
+  <div class="talkroom">
+    <div class="talkroom__name">
+      <p><%= "ルーム名：#{@room.name}" %></p>
+    </div>
+    <div class="talkroom__messages">
+      <div id='messages' data-room_id="<%= @room.id %>">
+        <%= render @messages %>
+      </div>
+    </div>
+    <div class="talkroom__form">
+      <div class="talkroom__form__label">
+        <%= label_tag :content, 'Say something:' %>
+      </div>
+      <div class="talkroom__form__field">
+        <%= text_field_tag :content, nil, data: { behavior: 'room_speaker' }, placeholder: 'メッセージを入力', class: "message-input"%>
+      </div>
+    </div>
+  </div>
+</section>

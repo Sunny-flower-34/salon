@@ -13,7 +13,6 @@
  
  */
 
-
 //  @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -23,6 +22,8 @@
 @import "modules/tags";
 @import "modules/home";
 @import "modules/flash";
+@import "modules/messages";
+@import "modules/rooms";
 
 * {
   text-decoration: none;
@@ -30,7 +31,6 @@
 }
 
 body {
-
   margin: 0px;
 }
 
@@ -42,7 +42,7 @@ body {
   margin-top: 103px;
 
   .notice {
-    background-color: #38AEF0;
+    background-color: #38aef0;
     opacity: 0.8;
     color: #fff;
     text-align: center;
@@ -50,7 +50,7 @@ body {
   }
 
   .alert {
-    background-color: #F35500;
+    background-color: #f35500;
     opacity: 0.8;
     color: #fff;
     text-align: center;
@@ -105,7 +105,6 @@ body {
 }
 
 .header {
-
   background-image: url("img_4453.jpeg");
   // opacity: 0.9;
   background-size: cover;
@@ -126,8 +125,8 @@ body {
 
   .title {
     font-family: "Snell Roundhand", "Trattatello", "Helvetica Neue", "Helvetica",
-      "Arial", "ＭＳ ゴシック", "Andale Mono", "Athelas", "Avenir", "Baskerville",
-      "HoeflerText-Regular", "Hoefler Text", sans-serif;
+      "Arial", "ＭＳ ゴシック", "Andale Mono", "Athelas", "Avenir",
+      "Baskerville", "HoeflerText-Regular", "Hoefler Text", sans-serif;
     font-size: 50px;
     // color: rgb(51, 50, 50);
     // color: #daa25a;
