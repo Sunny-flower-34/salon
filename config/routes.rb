@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  root to: "users#index"
   devise_for :users
+  devise_scope :user do
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   # get 'home/top'
   # root to: "home#top"
-  root to: "home#index"
   resources :users
   resources :rooms do
     resources :messages, only: [:index, :create]
