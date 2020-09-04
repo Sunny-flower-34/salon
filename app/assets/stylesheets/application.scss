@@ -73,10 +73,12 @@ body {
 
   .links {
     font-family: "Quicksand", sans-serif;
-    writing-mode: vertical-rl;
+    // writing-mode: vertical-rl;
     font-weight: bold;
     margin: 200px auto 100px;
     // text-align: center;
+    transform: rotate(-90deg);
+    padding-top: 42px;
   }
 }
 
