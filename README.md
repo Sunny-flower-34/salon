@@ -95,6 +95,8 @@ jQuery 1.12.4
 <br />
 <br /> -->
 
+
+
 ### 投稿の詳細ページから、コメントを残すことが可能です。
 
 ![8ab5f6a948b6cdb721a12b0f9addf4cc](https://user-images.githubusercontent.com/66055547/92346950-66357300-f109-11ea-8496-8deee0814e13.gif)

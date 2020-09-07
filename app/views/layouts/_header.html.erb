@@ -1,6 +1,5 @@
 <div class="body">
-
-
+  <% if user_signed_in? %>
   <aside class="asid">
     <div class="links">-------- LINK </div>
     <nav>
@@ -22,28 +21,10 @@
     <div>
     </div>
   </aside>
-
   <header class="header">
-    <div>
-      <%= link_to root_path, class: "title" do %>
-      Encounter Salon
-      <% end %>
-      <%
-=begin%>
-      <i class="fas fa-camera"></i>
-      <i class="fa fa-heart-o"></i>
-      <i class="fa fa-heart"></i>
-      <i class="fa fa-heart-o"></i>
-      <i class="fa fa-tag"></i>
-      <i class="fa fa-envelope-o"></i>
-      <i class="fa fa-envelope"></i>
-      <%
-=end%>
-
-    </div>
+    <div><%= link_to root_path, class: "title" do %>Encounter Salon<% end %></div>
     <input type="text" class="input" placeholder="検索">
     <div>
-      <% if user_signed_in? %>
       <ul class="menu">
         <li class="menu__list">
           <%= link_to destroy_user_session_path, method: :delete, class: "menu__list__ja" do%>
@@ -82,7 +63,13 @@
           <% end %>
         </li>
       </ul>
-      <% else %>
+    </div>
+  </header>
+  <% else %>
+  <header class="header">
+    <div><%= link_to root_path, class: "title" do %>Encounter Salon<% end %></div>
+    <input type="text" class="input" placeholder="検索">
+    <div>
       <ul class="menu">
         <li class="menu__list">
           <%= link_to posts_path, class: "menu__list__ja" do%>
@@ -115,11 +102,7 @@
           <% end %>
         </li>
       </ul>
-      <% end %>
-
     </div>
-
   </header>
-
-
+  <% end %>
 </div>
