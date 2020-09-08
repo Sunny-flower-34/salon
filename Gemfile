@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'sqlite3' 
 end
 
 group :development do
@@ -59,9 +60,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-group :production do
-  gem 'unicorn', '5.4.1'
-end
+# group :production do
+#   gem 'unicorn', '5.4.1'
+# end
 gem 'pry-rails'
 gem 'devise'
 gem 'devise-i18n'
@@ -73,3 +74,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 # gem 'rails-i18n' '~> 5.1'
 # gem 'railties' '>= 6.0.0
 gem "font-awesome-sass"
+
+group :production do
+  gem 'pg'
+end

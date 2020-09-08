@@ -1,0 +1,20 @@
+<div class="message">
+
+  <div class="message__user">
+    <div class="message__user__name">
+      <%= message.user.username %>
+    </div>
+    <div class="message__user__image">
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class:"imgsize2"%>
+
+    </div>
+  </div>
+  <div class="message__Speech-bubble">
+    <div class="says">
+      <p><%= message.content %></p>
+    </div>
+    <div class="message-time">
+      <%= message.updated_at.strftime("%Y-%m-%d %H:%M") %>
+    </div>
+  </div>
+</div>

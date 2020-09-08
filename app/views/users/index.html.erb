@@ -1,3 +1,10 @@
+<% if user_signed_in? %>
+<%
+=begin%>
+<p>ログインしてる時</p>
+<%
+=end%>
+
 <div class="section2">
   <main class="user-index">
 
@@ -44,3 +51,14 @@
     <% end %>
   </main>
 </div>
+
+<% else %>
+<%
+=begin%>
+<p>ログインしてない時</p>
+<%
+=end%>
+<section class="section">
+  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+</section>
+<% end %>

@@ -95,11 +95,13 @@ jQuery 1.12.4
 <br />
 <br /> -->
 
+
 ### 投稿の詳細ページから、コメントを残すことが可能です。
 
 ![8ab5f6a948b6cdb721a12b0f9addf4cc](https://user-images.githubusercontent.com/66055547/92346950-66357300-f109-11ea-8496-8deee0814e13.gif)
 <br />
 <br />
+
 
 ### 各種タグをクリックするとそのタグをつけているユーザーの一覧が表示されます。
 
@@ -190,3 +192,66 @@ E-Mail: m78.omori.haruka@gmail.com
 
 - has_many :tag-users
 - has_many :users, through: :tag-users
+
+# English
+
+[![Image from Gyazo]()]()  
+This app is a female-only matching app for getting to know people you like.
+
+## Description
+
+"SNS type matching app for women only". <br />
+I myself have the following thoughts and decided to make this app. <br />
+
+1 Unlike the days when I was a student who met face-to-face in the classroom every day and became friends naturally, becoming a member of society made it difficult to make new friends and make appointments.<br />
+2 I want to talk to various people in the same situation and broaden my sense of values. I want to meet people I have concerns about raising children, marriages, and things that I can't meet in my normal life. <br>
+3 Marriage, childbirth, child rearing, husband's transfer, etc. caused many life changes, and due to changes in the environment etc. I could not meet because it was not convenient for me...
+4 While raising a child, it was difficult to go outside with my child, and the girls' association could only go to lunch, so I couldn't keep up with my working friends. <br />
+5 My lifestyle has changed, so I can't easily invite me to go for a drink today!
+Written in Ruby, Ruby on Rails, jQuery, MySQL.
+This app has login/logout function, post list page, photo posting function, post deletion function, comment function, group talk function,
+There is a post page you like, a user page, and a tag function.
+
+<!-- ## Features / Demo -->
+
+## Point devised
+
+-Create many-to-many association and implement comment function
+-My page shows photos posted by me in the past in an easy-to-see list
+-Implemented comment function and like function by asynchronous communication
+
+## Issues and features you want to implement in the future
+
+-Show only posts by users you follow in the timeline
+-Post multiple images
+-Enable posting videos
+-Turn on notification function
+-Implement follow function using fictitious follow class and follower class
+-Implemented user search function in incremental search
+-Implemented a preview function to confirm the image to be posted
+
+## Development Environment
+
+Ruby 2.6.5  
+Rails 6.0.3.2  
+MySQL 14.14  
+jQuery 1.12.4
+
+## Production environment
+
+Saln is deployed on AWS  
+IP：あとで実装
+
+<!-- ## Test
+
+- Login Account
+  e-mail：m78.omori.haruka@gmail.com
+  password： -->
+
+## Author
+
+Haruka Oomori  
+Mail to: m78.omori.haruka@gmail.com
+<br />
+<br />
+<br />
