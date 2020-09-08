@@ -96,16 +96,17 @@ jQuery 1.12.4
 <br /> -->
 
 
-
 ### 投稿の詳細ページから、コメントを残すことが可能です。
 
 ![8ab5f6a948b6cdb721a12b0f9addf4cc](https://user-images.githubusercontent.com/66055547/92346950-66357300-f109-11ea-8496-8deee0814e13.gif)
 <br />
 <br />
 
-### 各種タグをクリックするとそのタグをつけているユーザー一覧が表示されます。
 
-![tag690240e4e392d55c61d7df628419a01c](https://user-images.githubusercontent.com/66055547/92347142-fc699900-f109-11ea-8901-969c4aa30b41.gif)
+### 各種タグをクリックするとそのタグをつけているユーザーの一覧が表示されます。
+
+![Tag33702b70103de12e62790b7173e378e4](https://user-images.githubusercontent.com/66055547/92470010-c2cf8580-f210-11ea-9d51-973f0446f678.gif)
+
 <br />
 <br />
 
