@@ -120,6 +120,7 @@
   border-bottom: 0.5px solid #bebebe;
   margin: 100px auto 60px;
   padding-left: 60px;
+
 }
 
 .post-cards {
@@ -151,55 +152,249 @@
 .section2 {
   width: 1400px;
   margin: 130px auto;
+  padding-left: 100px;
+  color: #777;
 
   .user-index {
-    background-color: rgb(233, 231, 231);
+    // background-color: rgb(233, 231, 231);
     display: flex;
     flex-wrap: wrap;
+  }
 
-    .users {
-      border: 1px solid #808080;
-      // background-color: rgb(90, 88, 88);
-      margin: 10px;
-      box-sizing: border-box;
-      width: 31%;
-      height: 600px;
+  .card {
+    float: left;
+    margin: 10px 15px;
+  }
 
-      &__link {
-        .username {
-          font-family: "Courier New", Courier, monospace;
-          font-size: 25px;
-          text-align: center;
+  .card-two {
+    position: relative;
+    width: 497px;
+    height: 640px;
+    background: #fff;
+    border: 1px solid #777;
+    box-shadow: 0 10px 7px -5px rgba(#000, .4);
 
-          .user-post-num {
-            font-size: 10px;
+    .user-header {
+      position: relative;
+      width: 100%;
+      height: 88px;
+      // background-color: #808080;
+      background-color: #333E48;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 2px;
+        right: 0;
+        background: inherit;
+
+        -webkit-transform: skewY(8deg);
+        -moz-transform: skewY(8deg);
+        -ms-transform: skewY(8deg);
+        -o-transform: skewY(8deg);
+        transform: skewY(8deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+      }
+
+      .avatar {
+        position: absolute;
+        left: 44%;
+        top: 32px;
+        margin-left: -50px;
+        z-index: 5;
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #ccc;
+        border: 3px solid #fff;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 98%;
+          object-fit: cover;
+
+          .imgsize2 {
+            // max-width: 100%;
+            // height: 100%;
+            // object-fit: cover;
+            // margin: auto;
+          }
+        }
+      }
+    }
+
+    .username {
+      position: relative;
+      margin: 127px 0 30px;
+      text-align: center;
+      color: #777;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        margin-left: -15px;
+        width: 30px;
+        height: 1px;
+        background: #777;
+      }
+    }
+
+    .desc {
+      padding: 0 1rem 2rem;
+      text-align: center;
+      line-height: 1.5;
+      color: #777;
+    }
+
+    .contacts {
+      width: 200px;
+      max-width: 100%;
+      margin: 0px auto 84.4px;
+
+      a {
+        display: block;
+        width: 33.333333%;
+        float: left;
+        text-align: center;
+        color: #808080;
+
+        &:hover {
+          color: #333;
+
+          .fa {
+            &::before {
+              color: #fff;
+            }
+
+            &::after {
+              top: 0;
+            }
           }
         }
 
-        .userimage {
-          height: 400px;
-          object-fit: cover;
+        .fa {
+          position: relative;
+          width: 40px;
+          height: 40px;
+          line-height: 39px;
+          overflow: hidden;
           text-align: center;
-          box-sizing: border-box;
-          margin: 10px;
+          border: 2px solid #808080;
+          border-radius: 50%;
 
+          &:before {
+            position: relative;
+            z-index: 1;
+          }
+
+          &::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transition: top .3s;
+            -moz-transition: top .3s;
+            -ms-transition: top .3s;
+            -o-transition: top .3s;
+            transition: top .3s;
+            background: #808080;
+          }
         }
 
+        &:last-of-type .fa {
+          line-height: 36px;
+        }
+      }
+    }
+
+    .user-p {
+      padding: 5px 20px 22px;
+      margin-bottom: 78px;
+      height: 81px;
+      overflow: scroll;
+      text-align: center;
+      line-height: 1.5;
+      color: #777;
+      font-size: 14px;
+
+    }
+
+    .user-footer {
+      position: relative;
+      height: 127px;
+      // background-color: #DAA25A;
+      background-color: #fae7f7;
+      background-color: rgb(243, 243, 243);
+      text-align: center;
+
+      p {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+
+        a {
+          padding: 0 1rem;
+          color: #e2e2e2;
+          -webkit-transition: color .4s;
+          -moz-transition: color .4s;
+          -ms-transition: color .4s;
+          -o-transition: color .4s;
+          transition: color .4s;
+
+          &:hover {
+            color: #808080;
+          }
+        }
       }
 
-      // &__post-num {
-      //   margin-top: 9px;
-      //   height: 5%;
-      //   // background-color: #fff;
-      // }
-      &__tags {
-        height: 120px;
-        // background-color: rgb(71, 70, 70);
-        margin: 10px auto;
-        overflow: scroll;
-        padding: 10px;
+      &::before {
+        z-index: 0;
+        content: '';
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: inherit;
 
-        .tag {}
+        -webkit-transform: skewY(8deg);
+        -moz-transform: skewY(8deg);
+        -ms-transform: skewY(8deg);
+        -o-transform: skewY(8deg);
+        transform: skewY(8deg);
+        -webkit-transform-origin: 100%;
+        -moz-transform-origin: 100%;
+        -ms-transform-origin: 100%;
+        -o-transform-origin: 100%;
+        transform-origin: 105%;
+      }
+
+      .users__tags {
+        height: 100px;
+        // // background-color: rgb(71, 70, 70);
+        margin: 0 10px;
+        overflow: scroll;
+        // padding: 10px;
+        position: absolute;
+        z-index: 1;
+
       }
     }
   }
