@@ -1,26 +1,23 @@
-<section class="section">
-  <h3 class="title">投稿詳細</h3>
+<section class="post-section">
+
   <div class="post">
     <div class="post__image">
       <%= attachment_image_tag @post, :image, class: "post-imgsize" %>
     </div>
     <div class="post__content">
       <div class="post-user">
-
         <span class="card__Contributor__imag">
           <%= attachment_image_tag @post.user, :profile_image, fallback: "no-image.png", class: "userimage" %>
         </span>
-        <div>
+        <div class="post-user__name">
           <%= link_to user_path(@post.user), class: "panel-block" do %>
           <%= @post.user.username %>
-
         </div>
-
-        <% if @post.user.id == current_user.id %>
-        <%= link_to edit_post_path(@post), class: "button is-success" do %>
-        <i class="fa fa-cog">編集</i>
-        <% end %>
-        <% end %>
+        <div class="post-user__cd">
+          <% if @post.user.id == current_user.id %>
+          <%= link_to edit_post_path(@post), class: "button is-success" do %> <i class="fa fa-cog"></i> <% end %>
+          <% end %>
+        </div>
         <% end %>
       </div>
       <div class="post-t">
@@ -36,11 +33,11 @@
       <div class="comments">
         <div class="comment">
           <% @comments.each do |comment| %>
-          <div>
-            <%= comment.comment_content %>
-          </div>
+          <p><%= comment.comment_content %></p>
+
           <% end %>
         </div>
+
         <div class="comment-form">
           <%= form_with(model:[@post, @comment], method: :post) do |f| %>
           <div class="comment-form__input">
