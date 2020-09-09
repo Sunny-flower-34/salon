@@ -1,25 +1,20 @@
-<div class="section2">
+<div class="usersection">
   <div class="profile">
     <div class="profile__image">
-      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class:"imgsize"%>
+      <%= attachment_image_tag @user, :profile_image, fallback: "no-image.png", class:"imgsize3"%>
     </div>
-
     <div class="profile__list">
       <div class="data">
         <div class="data__name">
           <%= @user.username %>
         </div>
-
         <% if @user.id == current_user.id %>
-        <%= @user.email %>
-        <div class="data__edit">
+        <div class="data__icon">
           <%= link_to edit_user_path(@user) do %>
-          <p class="icon1"><i class="fa fa-cog"></i></p>
+          <i class="fa fa-cog"></i>
           <% end %>
-        </div>
-        <div class="data__delete">
           <%= link_to user_path(@user), method: :delete, data: {confirm: "消していいの？"} do %>
-          <p class="icon1"><i class="fas fa-trash-alt"></i></p>
+          <i class="fas fa-trash-alt"></i>
           <% end %>
         </div>
         <% else %>
@@ -29,12 +24,10 @@
         </p>
         <% end %>
       </div>
-
       <div class="data2">
         <div class="data2__prof">
           <%= simple_format @user.profile %>
         </div>
-
         <div class="data2__tags">
           <% @user.tag_list.each do |tag| %>
           <%= link_to users_path(tag_name: tag),class: "tag" do %>
@@ -46,7 +39,7 @@
           <p class="icon2">
             <i class="fab fa-facebook-square"></i>
             <i class="fab fa-twitter"></i>
-            <i class="fab fa-github"></i>
+            <i class="fab fa-instagram"></i>
           </p>
         </div>
       </div>
@@ -56,41 +49,29 @@
 
 </div>
 <div class="Separating-line"> </div>
-
 <div class="section2">
-
-  <article class="align-center">
-    <div class="post-cards">
-      <% @user.posts.each do |post| %>
-      <div class="post-card">
-        <%= link_to post_path(post) do %>
-        <div class="post-card__image">
-          <%= attachment_image_tag post, :image, class:"imgsize" %>
-        </div>
-        <% end %>
-
-        <% if @user.id == current_user.id %>
-
-        <div class="post-card__edit">
-          <%= link_to edit_post_path(post) do %>
-          投稿編集<i class="fa fa-cog icon1"></i>
-          <% end %>
-        </div>
-
-        <div class="post-card__delete">
-          <%= link_to post_path(post), method: :delete, data: {confirm: "消していいの？"} do %>
-          投稿削除<i class="fas fa-trash-alt icon"></i>
-          <% end %>
-        </div>
-
-        <% end %>
-
-        <div class="post-card__time">
-          <%= post.updated_at.strftime("%Y-%m-%d %H:%M") %> 更新
-        </div>
-
+  <div class="post-cards">
+    <% @user.posts.each do |post| %>
+    <div class="post-card">
+      <%= link_to post_path(post) do %>
+      <div class="post-card__image">
+        <%= attachment_image_tag post, :image, class:"imgsize3" %>
       </div>
       <% end %>
+      <div class="post-card__i">
+        <div class="co">
+          <%= post.updated_at.strftime("%Y-%m-%d %H:%M") %>
+        </div>
+        <% if @user.id == current_user.id %>
+        <%= link_to edit_post_path(post) do %>
+        <i class="fa fa-cog co"></i>
+        <% end %>
+        <%= link_to post_path(post), method: :delete, data: {confirm: "消していいの？"} do %>
+        <i class="fas fa-trash-alt co"></i>
+        <% end %>
+        <% end %>
+      </div>
     </div>
-  </article>
+    <% end %>
+  </div>
 </div>
