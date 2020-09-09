@@ -143,17 +143,23 @@ body {
       text-align: center;
       padding: 10px;
       transition: 0.5s;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
 
       &:hover {
         background-color: #cecece80;
       }
 
-      &__eng {
-        // color: #daa25a;
+      &__en {
         color: #333e48;
         font-family: "Kaiti TC", sans-serif;
         font-size: 20px;
-        // transition: 0.7s;
+      }
+      &__ja {
+        &:hover {
+          background-color: #cecece80;
+        }
       }
     }
   }
