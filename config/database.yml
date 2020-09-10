@@ -47,21 +47,20 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-# production:
-#   <<: *default
-#   database: salon_production
-#   username: root
-#   password: <%= ENV['DATABASE_PASSWORD'] %>
-#   socket: /var/lib/mysql/mysql.sock
-
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  database: salon_production
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
+# production:
+#   <<: *default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
 
-  development:
-  adapter: postgresql
-  host: localhost
-  username: user
-  database: app-dev
+#   development:
+#   adapter: postgresql
+#   host: localhost
+#   username: user
+#   database: app-dev

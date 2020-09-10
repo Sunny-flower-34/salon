@@ -36,7 +36,7 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
-  gem 'sqlite3' 
+  # gem 'sqlite3' 
 end
 
 group :development do
@@ -75,6 +75,6 @@ gem 'acts-as-taggable-on', '~> 6.0'
 # gem 'railties' '>= 6.0.0
 gem "font-awesome-sass"
 
-group :production do
-  gem 'pg'
-end
+# group :production do
+#   gem 'pg'
+# end
