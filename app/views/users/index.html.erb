@@ -1,31 +1,15 @@
 <% if user_signed_in? %>
-<%
-=begin%>
-<p>ログインしてる時</p>
-<%
-=end%>
-
 <div class="section2">
   <main class="user-index">
-
     <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
     <div class=" user-card card-two users">
-      <%= link_to user_path(user) do %>
       <div class="user-header">
         <div class="avatar">
           <%= attachment_image_tag user, :profile_image, fallback: "no-image.png", class:"imgsize2" %>
         </div>
       </div>
-
       <h3 class="username"><%= user.username %></h3>
-
-      <%
-=begin%>
-      <div class="desc">
-        <span class="user-post-num">投稿数：<%= user.posts.count %></span>
-      </div>
-      <%
-=end%>
       <div class="contacts">
         <a href=""><i class="fa fa-plus"></i></a>
         <a href=""><i class="fa fa-whatsapp"></i></a>
@@ -33,10 +17,8 @@
         <div class="clear"></div>
       </div>
       <div class="user-p">
-
         <%= user.profile %>
       </div>
-
       <div class="user-footer">
         <div class="users__tags">
           <% user.tag_list.each do |tag| %>
@@ -45,19 +27,17 @@
           <% end %>
           <% end %>
         </div>
-      </div class="user-footer">
-      <% end %>
+      </div>
     </div>
+    <% end %>
     <% end %>
   </main>
 </div>
-
 <% else %>
-<%
-=begin%>
-<p>ログインしてない時</p>
-<%
-=end%>
+
+
+
+
 <section class="section">
   <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
 </section>

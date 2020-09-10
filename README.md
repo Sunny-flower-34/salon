@@ -194,10 +194,10 @@ E-Mail: m78.omori.haruka@gmail.com
 - has_many :tag-users
 - has_many :users, through: :tag-users
 
-# English
+<!-- # English
 
-[![Image from Gyazo]()]()  
-This app is a female-only matching app for getting to know people you like.
+[![Image from Gyazo]()]()
+This app is a female-only matching app for getting to know people you like. -->
 
 ## Description
 
@@ -238,10 +238,10 @@ Rails 6.0.3.2
 MySQL 14.14  
 jQuery 1.12.4
 
-## Production environment
+<!-- ## Production environment
 
-Saln is deployed on AWS  
-IP：あとで実装
+Saln is deployed on AWS
+IP：あとで実装 -->
 
 <!-- ## Test
 

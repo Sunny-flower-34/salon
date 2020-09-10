@@ -13,6 +13,9 @@
           <%= link_to user_path(@post.user), class: "panel-block" do %>
           <%= @post.user.username %>
         </div>
+        <div class="desc">
+          <span class="user-post-num">投稿数：<%= user.posts.count %></span>
+        </div>
         <div class="post-user__cd">
           <% if @post.user.id == current_user.id %>
           <%= link_to edit_post_path(@post), class: "button is-success" do %> <i class="fa fa-cog"></i> <% end %>
