@@ -97,7 +97,7 @@ jQuery 1.12.4
 
 ### 投稿の詳細ページから、コメントを残すことが可能です。
 
-![comment651ea4f5248f3596571c323473bdc4af](https://user-images.githubusercontent.com/66055547/92558432-75532700-f2a9-11ea-91c3-3bebbf7193ef.gif)
+![commentef251b87bb2801373b860a4ebdb8f23e](https://user-images.githubusercontent.com/66055547/92714517-474c1080-f397-11ea-8c0d-0c9acc363ecf.gif)
 
 <br />
 <br />

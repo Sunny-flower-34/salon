@@ -54,16 +54,6 @@ body {
   top: 0px;
   opacity: 0.8;
   text-align: center;
-
-  .links {
-    font-family: "Quicksand", sans-serif;
-    // writing-mode: vertical-rl;
-    font-weight: bold;
-    margin: 200px auto 100px;
-    // text-align: center;
-    transform: rotate(-90deg);
-    padding-top: 42px;
-  }
 }
 
 .icons {
@@ -153,4 +143,87 @@ body {
 
 li {
   list-style: none;
+}
+
+.links {
+  font-family: "Quicksand", sans-serif;
+  // writing-mode: vertical-rl;
+  font-weight: bold;
+  margin: 200px auto 100px;
+  // text-align: center;
+  transform: rotate(-90deg);
+  padding-top: 42px;
+  position: absolute;
+  top: -58px;
+  left: 35px;
+}
+nav {
+  margin-top: 328px;
+}
+
+.back-top {
+  transform: rotate(-90deg);
+  opacity: 0;
+  font-family: "Cormorant Garamond", serif;
+  position: fixed;
+  bottom: 100px;
+  left: 0px;
+  z-index: 6;
+  cursor: pointer;
+  transition: 1s;
+
+  .back-top-taxt {
+    font-weight: bold;
+  }
+}
+
+.back-top.fixed2 {
+  opacity: 1;
+}
+
+.arrow {
+  position: absolute;
+  top: 31px;
+  left: -93px;
+  margin-top: 26px;
+  margin-left: 20px;
+  padding-left: 82px;
+  z-index: 4;
+  // animation-name: eeeww;
+  // animation-timing-function: ease-in-out;
+  // animation-iteration-count: infinite;
+  // animation-direction: alternate;
+  // animation-duration: 1s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    bottom: 5px;
+    left: 63px;
+    width: 0;
+    height: 0;
+    border: none;
+    // border-left: solid 13px transparent;
+    border-top: solid 5px #646464;
+    transform: rotate(-180deg);
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 5px;
+    left: -14px;
+    width: 100%;
+    border-bottom: solid 1px #646464;
+  }
+}
+
+@keyframes eeeww {
+  0% {
+    transform: translateY(0, 0px);
+  }
+
+  100% {
+    transform: translateY(0, 20px);
+  }
 }

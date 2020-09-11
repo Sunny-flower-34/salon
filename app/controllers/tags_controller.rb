@@ -1,6 +1,11 @@
 class TagsController < ApplicationController
   def index
     @tags = ActsAsTaggableOn::Tag.all
+    # @users = User.all
+   
+      @users = User.tagged_with("#{params[:tag_name]}")
+   
+
   end
 
   def show

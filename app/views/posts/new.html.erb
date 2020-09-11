@@ -17,15 +17,7 @@
         <%= form_with model: @post, local: true do |f| %>
 
         <div class="post-form__field">
-          <%
-=begin%>
-          <% if f.object.image.attached?%>
-          <div class="image-preview">
-            <%= image_tag  f.abject.image %>
-          </div>
-          <% end %>
-          <%
-=end%>
+
           <div class="post-form__field__photo">Photo
             <%= f.label :image, class: "label" do %>
             <span><i class="far fa-image"></i></span>
@@ -49,10 +41,7 @@
           <%= f.submit '投稿！', class: "button1" %>
         </div>
         <% end %>
-
-
       </div>
-
     </div>
   </div>
 </section>

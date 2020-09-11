@@ -109,7 +109,7 @@
   text-align: center;
 
   .post-form {
-    width: 60%;
+    width: 90%;
     margin: 20px auto;
 
     &__field {
@@ -239,42 +239,46 @@
       font-size: 10px;
       color: #ccc;
     }
-
-    .comments {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100%;
+    .co {
+      height: 200px;
       border: 1px solid #ccc;
-      margin-top: 10px;
-
-      .comment {
-        height: 100px;
+      margin-left: 10px;
+      .comments {
+        height: 150px;
         overflow: scroll;
-        text-align: left;
-        margin: 10px 20px;
+        .comment {
+          text-align: left;
+          margin: 20px 20px;
+          display: flex;
+          font-size: 14px;
+          .commentuserimage {
+            border: 1px groove #919191;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+          }
+          &__user {
+            padding: 5px 5px 5px 8px;
+            .name {
+              font-weight: bold;
+            }
+          }
+        }
       }
-
       .comment-form {
-        // display: flex;
         border-top: 1px solid #ccc;
         position: relative;
-        // background-color: rgb(151, 91, 91);
-        height: 55px;
-
-        // display: flex;
-
+        height: 50px;
         &__input {
-          // border: none;
+          border: none;
 
-          &__field {
-            // white-space: pre-wrap;
-            // border: 1px solid #ccc;
+          // background-color: #feeeff;
+          .comment-form__input__field {
             width: 99%;
-            height: 50px;
-            // outline: none;
-            // box-sizing: border-box;
+            height: 49px;
+            box-sizing: border-box;
             border: none;
+            outline: none;
           }
         }
 
@@ -298,6 +302,7 @@
     }
   }
 }
+
 // ここまでが詳細ページ
 
 // koko

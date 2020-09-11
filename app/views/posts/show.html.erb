@@ -1,5 +1,4 @@
 <section class="post-section">
-
   <div class="post1">
     <div class="post1__image">
       <%= attachment_image_tag @post, :image, class: "post-imgsize" %>
@@ -13,12 +12,10 @@
           <%= link_to user_path(@post.user), class: "panel-block" do %>
           <%= @post.user.username %>
         </div>
-        <div class="desc">
-          <span class="user-post-num">投稿数：<%= user.posts.count %></span>
-        </div>
         <div class="post-user__cd">
           <% if @post.user.id == current_user.id %>
-          <%= link_to edit_post_path(@post), class: "button is-success" do %> <i class="fa fa-cog"></i> <% end %>
+          <%= link_to edit_post_path(@post), class: "button is-success" do %> <i class="fa fa-cog"></i><% end %>
+          <%= link_to post_path(@post), method: :delete, data: {confirm: "消していいの？"} do %><i class="fas fa-trash-alt"></i><% end %>
           <% end %>
         </div>
         <% end %>
@@ -32,14 +29,19 @@
       <div class="post-time">
         <time><%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %></time>
       </div>
-
-      <div class="comments">
-        <div class="comment">
+      <div class="co">
+        <div class="comments">
           <% @comments.each do |comment| %>
-          <p><%= comment.comment_content %></p>
-
+          <div class="comment">
+            <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "commentuserimage" %>
+            <div class="comment__user">
+              <span class="name"><%= comment.user.username %></span>:
+              <span class="b"><%= comment.comment_content %></span>
+            </div>
+          </div>
           <% end %>
         </div>
+
 
         <div class="comment-form">
           <%= form_with(model:[@post, @comment], method: :post) do |f| %>
@@ -52,9 +54,8 @@
           </div>
           <% end %>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
 
 </section>

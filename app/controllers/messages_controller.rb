@@ -1,4 +1,4 @@
-class MwssagesController < ApplicationController
+class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @room.messages.includes(:user)
