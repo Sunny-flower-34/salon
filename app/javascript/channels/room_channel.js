@@ -34,4 +34,3 @@ $(function () {
     }
   });
 });
-console.log("sacsess");

@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <h1 class="title">新規投稿</h1>
+    <h1 class="title">投稿編集</h1>
     <% if @post.errors.any? %>
     <div class="notification is-danger">
       <h2><%= pluralize(@post.errors.count, "エラー") %> prohibited this object from being saved: not successfully</h2>
@@ -13,11 +13,19 @@
     <% end %>
     <div class="post">
       <div class="post-form">
-
         <%= form_with model: @post, local: true do |f| %>
-
         <div class="post-form__field">
-          <div class="post-form__field__photo">Photo
+          <div class="post-form__field__photo">写真
+            <div id="image-box-1">
+              <div class="item-num-0" id="image-box__container">
+                <%= f.fields_for :images do |i| %>
+                <div class="input-area">
+                  <%= i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file" %>
+                  <%= f.label for: "img-file" do %><i class="far fa-image"></i><% end %>
+                </div>
+                <% end %>
+              </div>
+            </div>
             <%= f.label :image, class: "label" do %>
             <span><i class="far fa-image"></i></span>
             <%= f.attachment_field :image, class: "display-none" %>
