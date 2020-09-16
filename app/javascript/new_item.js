@@ -4,8 +4,8 @@ $(function () {
   //querySelectorでfile_fieldを取得
   var file_field = document.querySelector("input[type=file]");
   //fileが選択された時に発火するイベント
-  console.log("sa");
   $("#img-file").change(function () {
+    console.log("sa");
     //選択したfileのオブジェクトをpropで取得
     var files = $('input[type="file"]').prop("files")[0];
     $.each(this.files, function (i, file) {
