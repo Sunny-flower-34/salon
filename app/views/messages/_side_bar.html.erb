@@ -1,13 +1,13 @@
 <div class="sideber">
   <div class="talkroom-list">
     <div class="talkroom-list__title">
-      <%= current_user.username %>’s TALK ROOM
+      <%= current_user.username %> TALK ROOM
     </div>
-    <div class="talkroom-list__newroom">
-      <%= link_to new_room_path , class: "Contents" do %>
-      <p><i class="fas fa-comment-medical"></i></p>
-      <% end %>
+    <%= link_to new_room_path , class: "Contents" do %>
+    <div class="talkroom-list__newroom">NEW ROOM
+
     </div>
+    <% end %>
 
     <div class="room-list">
       <% current_user.rooms.each do |room| %>

@@ -6,26 +6,22 @@
       </div>
       <div class="groups__member">
         <% @room.users.each do |user| %>
-        <%= user.username %>
+        <%= user.username %><span>♡</span>
         <% end %>
       </div>
     </div>
     <div class="edit">
       <%= link_to edit_room_path(@room) , class: "edit__btn" do %>
-      <i class="fas fa-user-edit"></i>
       <% end %>
     </div>
   </div>
-
   <div class="chat-room__message-form">
     <%= form_with model: [@room, @message], html: {class: "Form"}, local: true do |f| %>
-    <div class="Form">
-      <%= f.text_field :content, class: 'Form__inputContent', placeholder: 'TYPE A MESSAGE' %>
-      <%= f.label :image, class: 'Form__inputImage' do %>
-      <%= f.file_field :image, class: 'Form__file' %>
-      <%= icon('far', 'image', class: 'Form__icon') %>
-      <% end %>
-    </div>
+    <%= f.text_field :content, class: 'Form__inputContent', placeholder: 'TYPE A MESSAGE' %>
+    <%= f.label :image, class: 'Form__inputImage' do %>
+    <%= f.file_field :image, class: 'Form__file' %>
+    <%= icon('far', 'image', class: 'Form__icon') %>
+    <% end %>
     <%= f.submit 'Send', class: 'Form__submit' %>
     <% end %>
   </div>
