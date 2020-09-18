@@ -78,7 +78,8 @@ gem 'acts-as-taggable-on', '~> 6.0'
 # gem 'rails-i18n' '~> 5.1'
 # gem 'railties' '>= 6.0.0
 gem "font-awesome-sass"
-
+gem 'carrierwave'
+gem 'mini_magick'
 # group :production do
 #   gem 'pg'
 # end

@@ -1,139 +1,413 @@
-// show
-.section3 {
-  max-width: 100vw;
-  text-align: center;
-  width: 1000px;
-  margin: 140px auto;
-  top: 0px;
-  left: 28%;
-  .room-title {
-  }
-  .talkroom {
-    border: solid 3px #e4e4e4;
-    background-color: rgb(238, 238, 238);
-    height: 900px;
-    position: relative;
-    &__name {
-      background-color: rgb(220, 220, 220);
-      width: 100%;
-      height: 60px;
-      position: absolute;
-      top: 0px;
-      z-index: 2;
-    }
-    &__messages {
-      overflow: scroll;
-      background-color: rgb(234, 234, 234);
-      padding: 65px 0;
-      height: 90%;
-      box-sizing: border-box;
-      .message {
-        display: flex;
-        margin: 20px;
-        padding-bottom: 20px;
-        align-items: flex-end;
-        &__user {
-          &__name {
-          }
-          &__image {
-            .imgsize2 {
-              border: solid 3px #d7ebfe;
-              border-radius: 50%;
-              width: 50px;
-              box-sizing: border-box;
+$section-color: #38aef0;
+
+.section4 {
+  // text-align: center;
+  width: 1500px;
+  top: 150px;
+  left: 142px;
+  position: fixed;
+
+  .wrapper {
+    display: flex;
+    border: 1px solid #ccc;
+    width: 1400px;
+    margin-left: 100px;
+    box-sizing: border-box;
+    height: 800px;
+
+    // ルームリスト
+    .sideber {
+      background-color: rgb(219, 216, 216);
+      // width: 30%;
+      flex: 1;
+
+      .talkroom-list {
+        // background-color: rgb(170, 162, 162);
+        padding: 25px 0;
+
+        &__title {
+          font-size: 30px;
+        }
+
+        .room-list {
+          overflow: scroll;
+
+          .room {
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding: 10px 9px;
+            height: 83px;
+            width: 100%;
+            border-top: 1px solid #fffC;
+            overflow: hidden;
+
+            // 名前と最後のメッセージ
+            &__link1 {
+              .name {
+                font-weight: bold;
+                font-size: 20px;
+                // color: #fff;
+              }
+
+              .mess {
+                color: rgb(139, 139, 139);
+                width: 267px;
+              }
+            }
+
+            // 編集と削除
+            &__link2 {
+              // padding: 10px;
+              // line-height: 30px;
+
+              i {
+                // color: #fff;
+                padding: 3px;
+              }
             }
           }
         }
-        &__Speech-bubble {
-          display: flex;
-          .says {
-            height: 53px;
-            display: inline-block;
-            position: relative;
-            margin-left: 20px;
-            padding: 0px 13px;
-            border-radius: 12px;
-            background: #fff;
-            // height: 50px;
+      }
+    }
+
+    // メイン
+    .chat-room {
+      // width: 70%;
+      // float: left;
+      height: 100%;
+      width: 100%;
+      flex: 3;
+      // overflow: scroll;
+      position: relative;
+      // background-color: rgb(85, 69, 69);
+
+      // ヘッダー
+      &__group-info {
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-bottom: 1px solid #eeeeee;
+        // @include nav_common(calc(100vw - 300px), 100px);
+        border-top: 1px solid #eee;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .groups {
+          margin-left: 40px;
+
+          &__name {
+            color: #333333;
+            font-size: 20px;
+            margin-top: 35px;
           }
 
-          .says:after {
-            content: "";
-            display: inline-block;
-            position: absolute;
-            top: 18px;
-            left: -24px;
-            border: 12px solid transparent;
-            border-right: 12px solid #fff;
+          &__member {
+            color: #999999;
+            font-size: 12px;
+            margin-top: 15px;
           }
+        }
 
-          .message-time {
-            font-size: 10px;
-            color: rgb(164, 164, 164);
-            margin: 30px 0 0 10px;
+        .edit {
+          &__btn {
+            // color: ;
+            font-size: 16px;
+            padding: 10px 20px;
+            line-height: 40px;
+            margin: 28px 40px;
+            // border: 1px solid;
+
           }
         }
       }
-    }
 
-    &__form {
-      background-color: rgb(220, 220, 220);
-      position: absolute;
-      width: 100%;
-      bottom: 0;
-      left: 0;
-      .message-input {
-        width: 600px;
-        height: 38px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 2px;
-        font-size: 10px;
-        margin: 10px;
+      // メッセージ
+      &__message-list {
+        width: 100%;
+        height: calc(100% - 170px);
+        position: absolute;
+        top: 100px;
+        right: 0;
+        overflow: scroll;
+        // @include nav_common(calc(100vw - 300px), calc(100vh - 100px - 90px));
+        background-color: #fafafa;
+        padding: 35px 30px;
+        box-sizing: border-box;
+
+        // 自分
+        .message1 {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+
+          &__left {
+            .time {
+              font-size: 10px;
+              color: #7a7a7a;
+              margin: 26px 0 13px 10px;
+
+              .time-f {
+                font-size: 10px;
+              }
+            }
+          }
+
+          &__right {
+            .Speech-bubble {
+              .mycomment {
+                // height: 38px;
+                line-height: 38px;
+                // /* display: inline-block; */
+                // position: relative;
+                margin: 0 12px;
+                padding: 0px 13px;
+                // border-radius: 12px;
+                // background: #926262;
+                position: relative;
+                // margin: 0 10px 0 0;
+                // padding: 8px;
+                max-width: 300px;
+                border-radius: 12px;
+                background: #30e852;
+                font-size: 15px;
+              }
+
+              .mycomment:after {
+                content: "";
+                position: absolute;
+                top: 14px;
+                right: -19px;
+                border: 5px solid transparent;
+                border-left: 18px solid #30e852;
+                -webkit-transform: rotate(-35deg);
+                transform: rotate(-27deg);
+              }
+
+              // }
+            }
+          }
+        }
+
+        // 相手
+        .message {
+          display: flex;
+          padding: 20px 0;
+          align-items: flex-end;
+
+          &__left {
+            .imgsize2 {
+              margin-top: 3px;
+              border: solid 3px #d7ebfe;
+              border-radius: 50%;
+              width: 60px;
+              height: 60px;
+              box-sizing: border-box;
+            }
+          }
+
+          &__right {
+            position: relative;
+
+            &__username {
+              position: absolute;
+              top: 0px;
+              left: 3px;
+              margin-top: 3px;
+              padding-left: 5px;
+            }
+
+            &__date {
+              display: flex;
+              margin-top: 9px;
+              margin-bottom: 4px;
+
+              .Speech-bubble {
+                .says {
+                  // height: 38px;
+                  line-height: 38px;
+                  /* display: inline-block; */
+                  position: relative;
+                  margin-left: 12px;
+                  padding: 0px 13px;
+                  border-radius: 12px;
+                  background: #dddddd;
+                  max-width: 300px;
+                }
+
+                .says:after {
+                  content: "";
+                  display: inline-block;
+                  position: absolute;
+                  top: 12px;
+                  left: -14px;
+                  border: 5px solid transparent;
+                  border-right: 14px solid #ddd;
+                }
+              }
+
+              .time {
+                font-size: 10px;
+                color: #7a7a7a;
+                margin: 37px 0 0 10px;
+
+                .time-f {
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 送信フォーム
+      &__message-form {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        // @include nav_common(calc(100vw - 300px), 90px);
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        .Form {
+
+          display: flex;
+          width: 100%;
+          height: 100%;
+          position: relative;
+
+          &__inputContent {
+            // @include nav_common(100%, 50px);
+            // padding: 10px;
+            padding-left: 30px;
+            width: 100%;
+            border: none;
+
+          }
+
+          &__inputImage {
+            position: absolute;
+            right: 19px;
+            top: 23px;
+
+            .Form__file {
+              display: none;
+            }
+
+            .far {
+              font-size: 25px;
+            }
+          }
+        }
+
+        .Form__submit {
+          height: 100%;
+          color: white;
+          border: none;
+          background-color: $section-color;
+          padding: 0 30px;
+          // margin-left: 15px;
+          // margin-right: 20px;
+        }
       }
     }
   }
 }
+
+
+
+
+
+
+// show
+// .section3 {
+//   max-width: 100vw;
+//   text-align: center;
+//   width: 1000px;
+//   margin: 140px auto;
+//   top: 0px;
+//   left: 28%;
+
+//   .room-title {}
+
+//   .talkroom {
+//     border: solid 3px #e4e4e4;
+//     background-color: rgb(238, 238, 238);
+//     height: 900px;
+//     position: relative;
+
+//     &__name {
+//       background-color: rgb(220, 220, 220);
+//       width: 100%;
+//       height: 60px;
+//       position: absolute;
+//       top: 0px;
+//       z-index: 2;
+//     }
+
+//     &__messages {
+//       overflow: scroll;
+//       background-color: rgb(234, 234, 234);
+//       padding: 65px 0;
+//       height: 90%;
+//       box-sizing: border-box;
+
+//       .message {
+//         display: flex;
+//         margin: 20px;
+//         padding-bottom: 20px;
+//         align-items: flex-end;
+
+//         &__user {
+//           &__name {}
+
+//           &__image {
+//             .imgsize2 {
+//               border: solid 3px #d7ebfe;
+//               border-radius: 50%;
+//               width: 50px;
+//               box-sizing: border-box;
+//             }
+//           }
+//         }
+
+
+//       }
+//     }
+
+//     &__form {
+//       background-color: rgb(220, 220, 220);
+//       position: absolute;
+//       width: 100%;
+//       bottom: 0;
+//       left: 0;
+
+//       .message-input {
+//         width: 600px;
+//         height: 38px;
+//         border-radius: 4px;
+//         border: 1px solid #ccc;
+//         background: #fff;
+//         line-height: 2px;
+//         font-size: 10px;
+//         margin: 10px;
+//       }
+//     }
+//   }
+// }
 
 // index
-.talkroom-list {
-  background-color: rgb(220, 220, 220);
-  padding: 25px 0;
-  &__title {
-    font-size: 30px;
-  }
-  .room-list {
-    display: flex;
-    background-color: rgba(114, 114, 114, 0.811);
-    border-radius: 5px;
-    margin: 10px auto;
-    width: 300px;
-    padding: 5px 0;
-    justify-content: space-between;
-    height: 80px;
-    &__link1 {
-      padding: 5px;
-      width: 150px;
-      &__name {
-        font-weight: bold;
-        font-size: 20px;
-        color: #fff;
-      }
-      &__list-message {
-        color: #fff;
-      }
-    }
-    &__link2 {
-      padding: 10px;
-      line-height: 30px;
-      i {
-        color: #fff;
-        padding: 3px;
-      }
-    }
-  }
-}
+
 
 // new
 .input-default {
@@ -147,6 +421,7 @@
   font-size: 10px;
   margin-top: 5px;
 }
+
 .button1 {
   width: 610px;
   height: 40px;
