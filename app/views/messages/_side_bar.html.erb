@@ -1,0 +1,39 @@
+<div class="sideber">
+  <div class="talkroom-list">
+    <div class="talkroom-list__title">
+      <%= current_user.username %> TALK ROOM
+    </div>
+    <%= link_to new_room_path , class: "Contents" do %>
+    <div class="talkroom-list__newroom">NEW ROOM
+
+    </div>
+    <% end %>
+
+    <div class="room-list">
+      <% current_user.rooms.each do |room| %>
+      <div class="room">
+        <div class="room__link1">
+          <%= link_to room_messages_path(room) do %>
+          <div class="name">
+            <%= room.name %>
+          </div>
+          <div class="mess">
+            <%= room.last_message %>
+          </div>
+        </div>
+        <% end %>
+        <div class="room__link2">
+          <span class="edit">
+            <%= link_to edit_room_path(room) do %>
+            <i class="fas fa-cog"></i>
+            <% end %></span>
+          <span class="delete">
+            <%= link_to room_path(room), method: :delete, data: {confirm: "消していいの？"} do %>
+            <i class="fas fa-trash-alt"></i>
+            <% end %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
