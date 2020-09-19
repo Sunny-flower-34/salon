@@ -65,6 +65,10 @@ body {
     margin-top: 70px;
     list-style: none;
 
+    .fa-female {
+      font-size: 26px;
+    }
+
     i {
       transition: background-color 0.5s ease 0s;
 
@@ -132,6 +136,7 @@ body {
         font-family: "Kaiti TC", sans-serif;
         font-size: 20px;
       }
+
       &__ja {
         &:hover {
           background-color: #cecece80;
@@ -157,6 +162,7 @@ li {
   top: -58px;
   left: 35px;
 }
+
 nav {
   margin-top: 328px;
 }

@@ -12,7 +12,10 @@
       <h3 class="username"><%= user.username %></h3>
       <div class="contacts">
         <a href=""><i class="fa fa-plus"></i></a>
-        <a href=""><i class="fa fa-whatsapp"></i></a>
+
+        <%= link_to rooms_path(user), class: "menu__list__ja" do%>
+        <i class="fa fa-whatsapp"></i><% end %>
+
         <a href=""><i class="fa fa-envelope"></i></a>
         <div class="clear"></div>
       </div>
