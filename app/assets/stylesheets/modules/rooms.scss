@@ -1,7 +1,6 @@
 $section-color: #38aef0;
 
 .section4 {
-  // text-align: center;
   width: 1500px;
   top: 150px;
   left: 142px;
@@ -64,12 +63,10 @@ $section-color: #38aef0;
             border-top: 1px solid #fff;
             overflow: hidden;
 
-            // 名前と最後のメッセージ
             &__link1 {
               .name {
                 font-weight: bold;
                 font-size: 20px;
-                // color: #fff;
               }
 
               .mess {
@@ -80,11 +77,8 @@ $section-color: #38aef0;
 
             // 編集と削除
             &__link2 {
-              // padding: 10px;
-              // line-height: 30px;
 
               i {
-                // color: #fff;
                 padding: 3px;
               }
             }
@@ -138,7 +132,6 @@ $section-color: #38aef0;
         top: 0;
         right: 0;
         border-bottom: 1px solid #eeeeee;
-        // @include nav_common(calc(100vw - 300px), 100px);
         border-top: 1px solid #eee;
         background-color: #fff;
         display: flex;
@@ -173,7 +166,6 @@ $section-color: #38aef0;
             padding: 10px 20px;
             line-height: 40px;
             margin: 28px 40px;
-            // border: 1px solid;
 
           }
         }
@@ -187,7 +179,6 @@ $section-color: #38aef0;
         top: 100px;
         right: 0;
         overflow: scroll;
-        // @include nav_common(calc(100vw - 300px), calc(100vh - 100px - 90px));
         background-color: #fafafa;
         padding: 35px 30px;
         box-sizing: border-box;
@@ -249,7 +240,6 @@ $section-color: #38aef0;
           display: flex;
           padding: 20px 0;
           align-items: flex-end;
-          // justify-content: flex-end;
 
           &__left {
             .imgsize2 {
@@ -280,9 +270,7 @@ $section-color: #38aef0;
 
               .Speech-bubble {
                 .says {
-                  // height: 38px;
                   line-height: 38px;
-                  /* display: inline-block; */
                   position: relative;
                   margin-left: 12px;
                   padding: 0px 13px;
@@ -306,7 +294,6 @@ $section-color: #38aef0;
                 max-width: 300px;
                 margin-right: 5px;
                 max-height: 202px;
-                /* height: 200px; */
                 margin-top: 17px;
               }
 
@@ -314,11 +301,8 @@ $section-color: #38aef0;
                 font-size: 10px;
                 color: #7a7a7a;
                 margin: 37px 0 0 10px;
-                // text-align: end;
 
-                .time-f {
-                  // font-size: 10px;
-                }
+                .time-f {}
               }
             }
           }
@@ -332,7 +316,6 @@ $section-color: #38aef0;
         position: absolute;
         bottom: 0;
         right: 0;
-        // @include nav_common(calc(100vw - 300px), 90px);
         background-color: #fff;
         border-top: 1px solid #eee;
         display: flex;
@@ -347,8 +330,6 @@ $section-color: #38aef0;
           position: relative;
 
           &__inputContent {
-            // @include nav_common(100%, 50px);
-            // padding: 10px;
             padding-left: 30px;
             width: 100%;
             border: none;
@@ -380,8 +361,6 @@ $section-color: #38aef0;
           position: absolute;
           z-index: 1;
           right: 0;
-          // margin-left: 15px;
-          // margin-right: 20px;
         }
       }
     }
@@ -389,95 +368,10 @@ $section-color: #38aef0;
 }
 
 
-
-
-
-
-// show
-// .section3 {
-//   max-width: 100vw;
-//   text-align: center;
-//   width: 1000px;
-//   margin: 140px auto;
-//   top: 0px;
-//   left: 28%;
-
-//   .room-title {}
-
-//   .talkroom {
-//     border: solid 3px #e4e4e4;
-//     background-color: rgb(238, 238, 238);
-//     height: 900px;
-//     position: relative;
-
-//     &__name {
-//       background-color: rgb(220, 220, 220);
-//       width: 100%;
-//       height: 60px;
-//       position: absolute;
-//       top: 0px;
-//       z-index: 2;
-//     }
-
-//     &__messages {
-//       overflow: scroll;
-//       background-color: rgb(234, 234, 234);
-//       padding: 65px 0;
-//       height: 90%;
-//       box-sizing: border-box;
-
-//       .message {
-//         display: flex;
-//         margin: 20px;
-//         padding-bottom: 20px;
-//         align-items: flex-end;
-
-//         &__user {
-//           &__name {}
-
-//           &__image {
-//             .imgsize2 {
-//               border: solid 3px #d7ebfe;
-//               border-radius: 50%;
-//               width: 50px;
-//               box-sizing: border-box;
-//             }
-//           }
-//         }
-
-
-//       }
-//     }
-
-//     &__form {
-//       background-color: rgb(220, 220, 220);
-//       position: absolute;
-//       width: 100%;
-//       bottom: 0;
-//       left: 0;
-
-//       .message-input {
-//         width: 600px;
-//         height: 38px;
-//         border-radius: 4px;
-//         border: 1px solid #ccc;
-//         background: #fff;
-//         line-height: 2px;
-//         font-size: 10px;
-//         margin: 10px;
-//       }
-//     }
-//   }
-// }
-
-// index
-
-
 // new
 .input-default {
   width: 600px;
   height: 38px;
-  // padding: 10px 16px 4px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
