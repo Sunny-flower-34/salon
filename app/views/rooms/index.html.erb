@@ -2,6 +2,14 @@
   <div class="wrapper">
     <%= render "messages/side_bar" %>
     <div class="chat-room">
+      <div class="start">
+        <p>さぁトークを始めよう♡</p>
+        <p>新しくトークルームを作る</p>
+        <%= link_to new_room_path , class: "Contents" do %>
+        <div class="newroom">
+          NEW ROOM
+        </div>
+        <% end %>
+      </div>
     </div>
-  </div>
 </section>
