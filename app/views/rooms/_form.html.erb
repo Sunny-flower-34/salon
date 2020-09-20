@@ -31,17 +31,17 @@
         </div>
         <div class="ChatMembers">
           <p class="ChatMember__name"><%= current_user.username %></p>
-          <input name="room[user_ids][]" , type="hidden" , value=current_user.id>
+          <input name="group[user_ids][]" , type="hidden" , value=current_user.id>
         </div>
         <% @room.users.each do |user| %>
         <% if current_user.username != user.username %>
         <%= user.username %>
         <div class="ChatMember__remove.ChatMember__button">?????</div>
-        <input name="room[user_ids][]" , type="hidden" , value=current_user.id>
+        <input name="group[user_ids][]" , type="hidden" , value=current_user.id>
         <% end %>
         <% end %>
       </div>
-      <%= f.submit "作成",class: 'SettingroomForm__button button1' %>
+      <%= f.submit "作成",class: 'SettingGroupForm__button button1' %>
     </div>
   </div>
 </div>
