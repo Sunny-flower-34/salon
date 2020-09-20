@@ -61,3 +61,5 @@
 #   }
 
 server '18.178.233.178', user: 'ec2-user', roles: %w{app db web}
+
+set :ssh_options, keys: '~/.ssh/sunny' 
