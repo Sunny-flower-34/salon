@@ -129,7 +129,7 @@ jQuery 1.12.4
 
 ## 課題や今後実装したい機能
 
-- イベント機能の実装をし、ユーザーがイベントを開催→参加希望と参加許可機能を実装
+- イベント機能の実装をし、ユーザーがイベントを開催 → 参加希望と参加許可機能を実装
 - インクリメンタルサーチでのユーザー検索機能を実装
 - タイムラインに、あなたがフォローしているユーザーの投稿のみを表示
 - 画像を複数枚投稿する
@@ -160,8 +160,11 @@ E-Mail: m78.omori.haruka@gmail.com
 ### Association
 
 - has_many :posts
+- has_many :comments
 - has_many :tag-users
 - has_many :tags, through: :tag-users
+- has_many :room-users
+- has_many :rooms, through: :room-users
 
 ## posts テーブル
 
@@ -175,6 +178,20 @@ E-Mail: m78.omori.haruka@gmail.com
 ### Association
 
 - belongs_to :user
+- belongs_to :comment
+
+## comments テーブル
+
+| Column          | Type    | Options                        |
+| --------------- | ------- | ------------------------------ |
+| user_id         | integer | null: false, foreign_key: true |
+| post_id         | integer | null: false, foreign_key: true |
+| comment_content | text    | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
 
 ## tag-users テーブル
 
@@ -198,6 +215,42 @@ E-Mail: m78.omori.haruka@gmail.com
 
 - has_many :tag-users
 - has_many :users, through: :tag-users
+
+## room-users テーブル
+
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
+| user_id | integer | null: false, foreign_key: true |
+| room_id | integer | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+- belongs_to :user
+
+## rooms テーブル
+
+| Column   | Type   | Options                        |
+| -------- | ------ | ------------------------------ |
+| tag_name | string | null: false, foreign_key: true |
+
+### Association
+
+- has_many :room-users
+- has_many :rooms, through: :room-users
+
+## messages テーブル
+
+| Column  | Type    | Options                        |
+| ------- | ------- | ------------------------------ |
+| user_id | integer | null: false, foreign_key: true |
+| room_id | integer | null: false, foreign_key: true |
+| content | text    | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
 
 <!-- # English
 
