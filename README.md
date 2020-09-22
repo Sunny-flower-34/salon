@@ -23,8 +23,9 @@ Things you may want to cover:
 - Deployment instructions
 
 - ...
+<!--  -->
 
-# 日本語 -->
+# 日本語
 
 このアプリは、気の合う人と知り合う為の女性専用マッチングアプリです。
 
@@ -252,10 +253,10 @@ E-Mail: m78.omori.haruka@gmail.com
 - belongs_to :user
 - belongs_to :room
 
-<!-- # English
+# English
 
-[![Image from Gyazo]()]()
-This app is a female-only matching app for getting to know people you like. -->
+<!-- [![Image from Gyazo]()]()
+This app is a female-only matching app for getting to know people you like. --> -->
 
 ## Description
 
@@ -275,19 +276,22 @@ There is a post page you like, a user page, and a tag function.
 
 ## Point devised
 
--Create many-to-many association and implement comment function
--My page shows photos posted by me in the past in an easy-to-see list
--Implemented comment function and like function by asynchronous communication
+-Implemented group talk function to send messages asynchronously
+-Create many-to-many associations and implement commenting
+-On My Page, the photos you posted in the past are displayed in a list for easy viewing.
+-You can leave a comment from the post details page
+-Click various tags to display a list of users with those tags
 
 ## Issues and features you want to implement in the future
 
--Show only posts by users you follow in the timeline
--Post multiple images
--Enable posting videos
--Turn on notification function
--Implement follow function using fictitious follow class and follower class
--Implemented user search function in incremental search
--Implemented a preview function to confirm the image to be posted
+--Implemented the event function and the user holds the event → Implemented the participation request and participation permission function
+--Implemented user search function in incremental search
+--Show only posts of users you follow on the timeline
+--Post multiple images
+--Allows you to post videos
+--Implemented preview function asynchronously to check the image to be posted
+--Add notification function
+--Implemented follow function using fictitious follow class and follower class
 
 ## Development Environment
 
