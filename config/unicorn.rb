@@ -6,8 +6,8 @@ worker_processes 1
 
 #アプリケーションの設置されているディレクトリを指定
 # working_directory "#{app_path}/current/config"
+working_directory "#{app_path}/current"
 # working_directory "#{app_path}/current"
-working_directory RAILS_ROOT
 
 #ポート番号を指定
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
