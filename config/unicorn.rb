@@ -7,7 +7,7 @@ worker_processes 1
 #アプリケーションの設置されているディレクトリを指定
 working_directory "#{app_path}/current/config"
 # working_directory "#{app_path}/current"
-# working_directory "#{app_path}/current"
+
 
 #ポート番号を指定
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
@@ -24,7 +24,7 @@ stdout_path "#{app_path}/shared/log/unicorn.stdout.log"
 #Railsアプリケーションの応答を待つ上限時間を設定
 timeout 60
 
-#以下は応用的な設定なので説明は割愛
+
 
 preload_app true
 GC.respond_to?(:copy_on_write_friendly=) && GC.copy_on_write_friendly = true
