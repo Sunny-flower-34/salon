@@ -6,7 +6,7 @@ worker_processes 1
 
 #アプリケーションの設置されているディレクトリを指定
 # working_directory "#{app_path}/current/config"
-working_directory app_path
+working_directory "#{app_path}/current"
 
 
 #ポート番号を指定
