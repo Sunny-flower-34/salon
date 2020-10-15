@@ -37,7 +37,32 @@
   </main>
 </div>
 <% else %>
+<main>
+  <div class="top">
+    <div class="ic-g-6 ic-center t-center">
+      <h1>
+        <span class="f-o-t">Be the</span>
+        <span class="ic-accent">Woman</span>
+        <span class="outline">You want to be</span>
+      </h1>
+    </div>
+    <figure class="clip-group">
+      <div class="parallax">
+        <div class="circle">
+          <div class="image"></div>
+        </div>
+      </div>
+      <div class="parallax2">
+        <div class="circle2">
+          <div class="image2"></div>
+        </div>
+      </div>
+    </figure>
+  </div>
+</main>
 <section class="section">
-  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+  <div class="guest">
+    <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+  </div>
 </section>
 <% end %>
