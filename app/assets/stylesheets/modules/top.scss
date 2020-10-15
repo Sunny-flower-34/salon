@@ -159,5 +159,11 @@
 
 .guest {
   border: 1px solid #16191B;
-  // width: 500px;
+  width: 250px;
+  margin: 0 auto;
+  padding: 10px;
+
+  &:hover {
+    background-color: #cecece80;
+  }
 }

@@ -147,6 +147,66 @@ body {
   }
 }
 
+.header2 {
+  // background-image: url("img_4453.jpeg");
+  // background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 10;
+  // box-shadow: 0px 4px 10px 2px #3f3f3f;
+
+  .title {
+    font-family: "Snell Roundhand", "Trattatello", "Helvetica Neue", "Helvetica",
+      "Arial", "ＭＳ ゴシック", "Andale Mono", "Athelas", "Avenir",
+      "Baskerville", "HoeflerText-Regular", "Hoefler Text", sans-serif;
+    // font-family: "Courier New", Courier, monospace;
+    // font-family: "Cormorant Garamond", serif;
+    // font-family: "Kaiti TC", sans-serif;
+
+    font-size: 50px;
+    margin-left: 50px;
+    color: #333e48;
+  }
+
+  .input {
+    width: 300px;
+    height: 30px;
+  }
+
+  .menu {
+    display: flex;
+    margin: 0 20px;
+
+    &__list {
+      margin-left: 10px;
+      font-size: 12px;
+      list-style: none;
+      text-align: center;
+      padding: 10px;
+      transition: 0.5s;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+
+      &:hover {
+        background-color: #cecece80;
+      }
+
+      &__en {
+        color: #333e48;
+        font-family: "Kaiti TC", sans-serif;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
 li {
   list-style: none;
 }
