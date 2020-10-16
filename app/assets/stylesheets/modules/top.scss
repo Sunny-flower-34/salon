@@ -78,13 +78,13 @@
         height: 300px;
         background: linear-gradient(90deg, #00c6ff, #0072ff);
         border-radius: 48% 69% 56% 53% / 47% 73% 43% 49%;
-        animation: move 8s linear infinite;
+        animation: move 6s linear infinite;
         overflow: hidden;
 
         .image {
           overflow: hidden;
-          width: 300px;
-          height: 300px;
+          width: 320px;
+          height: 320px;
           // background: url("https://dl.dropbox.com/s/vwkjczvgfcdqx7q/sunset.png?dl=0");
           background: url("https://joinincharge.com/img/pattern-red.png");
           background-size: cover;
@@ -95,14 +95,17 @@
 
     @keyframes move {
       25% {
+        height: 320px;
         border-radius: 80% 50% 59% 41% / 72% 61% 79% 28%;
       }
 
       50% {
+        height: 310px;
         border-radius: 80% 20% 59% 41% / 72% 21% 79% 28%;
       }
 
       75% {
+        width: 320px;
         border-radius: 100% 69% 100% 83% / 68% 99% 53% 93%;
       }
     }
@@ -126,7 +129,7 @@
         height: 310px;
         background: linear-gradient(90deg, #00c6ff, #0072ff);
         border-radius: 48% 69% 56% 53% / 47% 73% 43% 49%;
-        animation: movee 8s linear infinite;
+        animation: movee 5s linear infinite;
         overflow: hidden;
         width: 333px;
         height: 450px;
@@ -142,16 +145,16 @@
     }
 
     @keyframes movee {
-      25% {
+      45% {
         border-radius: 33% 134% 78% 41% / 92% 21% 12% 28%;
       }
 
-      50% {
+      70% {
         border-radius: 50% 14% 28% 41% / 92% 21% 12% 28%;
       }
 
-      75% {
-        border-radius: 100% 69% 100% 83% / 68% 99% 53% 93%;
+      95% {
+        border-radius: 30% 69% 30% 83% / 68% 99% 53% 93%;
       }
     }
   }
@@ -165,5 +168,17 @@
 
   &:hover {
     background-color: #cecece80;
+  }
+}
+
+.hero-image {
+  position: relative;
+
+  .view {
+    overflow: hidden;
+    position: absolute;
+    left: -300px;
+    top: -300px;
+    // width: 500px;
   }
 }
