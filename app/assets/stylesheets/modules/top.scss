@@ -1,3 +1,5 @@
+// トップページ
+
 .top {
   font-family: "IC Body Regular", sans-serif;
   color: #16191B;
@@ -74,8 +76,8 @@
       z-index: 1;
 
       .circle {
-        width: 300px;
-        height: 300px;
+        width: 320px;
+        height: 320px;
         background: linear-gradient(90deg, #00c6ff, #0072ff);
         border-radius: 48% 69% 56% 53% / 47% 73% 43% 49%;
         animation: move 6s linear infinite;
@@ -160,25 +162,61 @@
   }
 }
 
+// ゲストログイン
 .guest {
   border: 1px solid #16191B;
   width: 250px;
   margin: 0 auto;
   padding: 10px;
+  border-radius: 5px;
 
   &:hover {
     background-color: #cecece80;
   }
 }
 
-.hero-image {
+.hero {
+  display: flex;
   position: relative;
 
-  .view {
-    overflow: hidden;
+  // 左の画像
+  &__image {
+    position: relative;
+
+    .view {
+      overflow: hidden;
+      position: absolute;
+      left: -246px;
+      top: -291px;
+      width: 609px;
+    }
+
+    .view2 {
+      width: 433px;
+      position: absolute;
+      left: 98px;
+      top: -195px;
+      border: 2px solid #16191B;
+      background-size: cover;
+    }
+  }
+
+  &__info {
+    width: 700px;
+    font-size: 1.9rem;
+    line-height: 1.5;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    color: #16191B;
+    font-family: "IC Body Regular", sans-serif;
     position: absolute;
-    left: -300px;
-    top: -300px;
-    // width: 500px;
+    right: 250px;
+
+    strong {
+      font-weight: bold;
+    }
   }
 }
