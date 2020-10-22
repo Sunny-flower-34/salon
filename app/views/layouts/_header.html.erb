@@ -7,7 +7,10 @@
     </div>
     <nav>
       <ul class="icons">
-        <li><i class="fas fa-camera"></i></li>
+        <li>
+          <%= link_to posts_path do%>
+          <i class="fas fa-camera"></i>
+          <% end %></li>
         <li><i class="fa fa-heart"></i></li>
         <li class="menu__list">
           <%= link_to users_path, class: "menu__list__ja" do%>
