@@ -13,7 +13,7 @@ ActsAsTaggableOn.force_lowercase = false
 ActsAsTaggableOn.strict_case_match = false
 
 # MySqlで特殊文字を完全に一致させたい場合
-ActsAsTaggableOn.force_binary_collation = true
+# ActsAsTaggableOn.force_binary_collation = true
 
 # テーブル名を指定する場合：
 # ActsAsTaggableOn.tags_table = 'aato_tags'
