@@ -20,4 +20,5 @@ ActsAsTaggableOn.strict_case_match = false
 # ActsAsTaggableOn.taggings_table = 'aato_taggings'
 
 # デフォルトの区切り文字を変更する場合。default","
-ActsAsTaggableOn.delimiter = ' '
+
+ActsAsTaggableOn.default_parser = ' '
