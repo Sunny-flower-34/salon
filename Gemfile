@@ -80,6 +80,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem "font-awesome-sass"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
 # group :production do
 #   gem 'pg'
 # end
