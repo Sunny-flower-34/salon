@@ -11,6 +11,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
+  # ↓trueで本番環境でもローカル開発環境と同じように、ブラウザにエラーメッセージが表示されるようになる
   config.consider_all_requests_local = true
   # config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true

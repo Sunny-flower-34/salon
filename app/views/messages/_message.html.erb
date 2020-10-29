@@ -12,6 +12,7 @@
         <p><%= simple_format message.content %></p>
       </div>
       <% end %>
+
       <%= image_tag message.image.url, class: 'Message__image' if message.image.present? %>
     </div>
   </div>
